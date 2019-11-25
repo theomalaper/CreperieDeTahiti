@@ -8,4 +8,4 @@ const ProductTypeTaste = mongoose.Schema({
   image: String,
 })
 
-module.exports = mongoose.model('Product_type_taste', ProductTypeTaste)
+module.exports = mongoose.model('Product_type_taste', ProductTypeTaste) 

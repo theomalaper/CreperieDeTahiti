@@ -4,14 +4,19 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
+require('dotenv').config()
 
 const indexRouter = require('./routes/index');
 const productsRouter = require('./routes/products');
 
 const app = express();
-mongoose.connect(`mongodb+srv://theo_malaper:${process.env.DB_CONNECTION_PASSWORD}@creperiedetahiti-vrj6k.mongodb.net/test?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
-  console.log('Connected to DB!')
-})
+mongoose.connect('mongodb+srv://theo_malaper:' + process.env.DB_CONNECTION_PASSWORD + '@creperiedetahiti-vrj6k.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+  .then (() => {
+    console.log('Connected to Db')
+  })
+  .catch(err => {
+    console.log(err)
+  })
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
