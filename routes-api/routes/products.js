@@ -3,7 +3,6 @@ const router = express.Router();
 const Product = require('../models/Product')
 const Product_type = require('../models/Product_type')
 const Product_type_taste = require('../models/Product_type_taste')
-const mongoose = require('mongoose')
 
 // Get all the products of the website
 router.get('/', function(req, res, next) {

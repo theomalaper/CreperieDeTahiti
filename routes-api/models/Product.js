@@ -6,6 +6,6 @@ const ProductSchema = mongoose.Schema({
   main_ingredient: String,
   composition: String,
   image: String
-})
+});
 
-module.exports = mongoose.model('Product', ProductSchema)
+module.exports = mongoose.model('Product', ProductSchema);
