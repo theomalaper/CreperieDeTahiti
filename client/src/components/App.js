@@ -1,12 +1,28 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import Homepage from './Homepage'
+import useApplicationData from '../hooks/useApplicationData'
 
-function App() {
+
+export default function App() {
+  const { state, dispatch } = useApplicationData()
+
   return (
-    <div className="App">
-      <p>Hello</p>
-    </div>
+    <Router>
+      <div>
+        <header></header>
+        <Switch>
+          <Route exact path="/">
+            <Homepage 
+              state={state}
+              dispatch={dispatch}
+            />
+          </Route>
+        </Switch>
+        <footer></footer>
+      </div>
+    </Router>
   );
 }
 
-export default App;

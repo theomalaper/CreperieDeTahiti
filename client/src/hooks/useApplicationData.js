@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer } from 'react';
 import axios from 'axios';
 
-const SET_HOMEPAGE_DATA = 'SET_HOMEPAGE';
+const SET_HOMEPAGE_DATA = 'SET_HOMEPAGE_DATA';
 
 const reducer = (state, action) => {
   const actions = {
@@ -13,14 +13,13 @@ const reducer = (state, action) => {
 
   if(!actions[action.type]) {
     throw new Error('Type of action not found')
-  };
+  }
   return actions[action.type];
 };
 
 const useApplicationData = () => {
   const [state, dispatch] = useReducer(reducer, {
     products: {},
-    product_types: {},
   })
 
   useEffect(() => {
