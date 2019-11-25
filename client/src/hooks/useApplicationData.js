@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import axios from 'axios';
 
 const SET_HOMEPAGE_DATA = 'SET_HOMEPAGE_DATA';

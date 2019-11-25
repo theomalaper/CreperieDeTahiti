@@ -1,3 +1,59 @@
 .App {
   text-align: center;
 }
+
+.App-Nav-bar {
+  display: flex;
+  height: 9vh;
+  width: 100vw;
+  .Nav-bar-left {
+    background-color: grey;
+    color: white;
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    padding: 0 0 0 4em;
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+  .Nav-bar-right {
+    background-color: grey;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    padding: 0 0.2em;
+    .Nav-bar-links {
+      text-decoration: none;
+      color: white;
+      padding: 0 0.2em;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .Nav-bar-search-button {
+      background-color: transparent;
+      border: none;
+      img {
+        width: 1.45em;
+        height: 1.45em;
+      }
+    }
+    .Nav-bar-icon-separator {
+      background-color: white;
+      width: 2px;
+      height: 35%;
+    }
+    .Nav-bar-random-button {
+      background-color: transparent;
+      border: none;
+      img {
+        width: 1.65em;
+        height: 1.65em;
+      }
+    }
+  }
+}
