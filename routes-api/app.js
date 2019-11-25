@@ -9,7 +9,7 @@ const indexRouter = require('./routes/index');
 const productsRouter = require('./routes/products');
 
 const app = express();
-mongoose.connect('mongodb+srv://theo_malaper:Zorro200101@creperiedetahiti-vrj6k.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+mongoose.connect(`mongodb+srv://theo_malaper:${process.env.DB_CONNECTION_PASSWORD}@creperiedetahiti-vrj6k.mongodb.net/test?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
   console.log('Connected to DB!')
 })
 
