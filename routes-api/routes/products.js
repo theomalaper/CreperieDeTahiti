@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Product = require('../models/Product')
+const mongoose = require('mongoose')
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -15,19 +16,20 @@ router.get('/', function(req, res, next) {
 
 router.post('/', (req, res) => {
   const product = new Product({
+    _id: new mongoose.Types.ObjectId(),
     name: req.body.name,
-    main_ingredient: req.body.main_ingredient,
+    ingredient: req.body.ingredient,
     composition: req.body.composition,
     image: req.body.image
   })
 
-  product.save() 
-  .then(data => {
-    res.json(data)
-  })
-  .catch(err => {
-    console.log(err)
-  })
+  product.save()
+    .then(data => {
+      console.log(data)
+    })
+    .catch(err => {
+      console.log(err)
+    })
 })
 
 module.exports = router;

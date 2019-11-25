@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema
 
-const ProductSchema = new Schema({
+const ProductSchema = mongoose.Schema({
+  _id: mongoose.Schema.Types.ObjectId,
   name: String,
   main_ingredient: String,
   composition: String,
   image: String
 })
 
-module.exports = mongoose.model('Products', ProductSchema)
+module.exports = mongoose.model('Product', ProductSchema)
