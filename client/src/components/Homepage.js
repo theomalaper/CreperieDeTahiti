@@ -30,7 +30,7 @@ export default function Homepage() {
           <div className="presentation-content">
             <h5>Ia orana na</h5>
             <div className="presentation-point">
-              <h3>Naturel et frais</h3>
+              <h3 className="top-section-title">Naturel et frais</h3>
               <p>Notre pate est fraiche et faites sur place le jour meme pour assurer la meilleur qualité possible pour le client Nos crepes et galettes sont cuites sur les deux faces pour faire ressortir le gout et permettree une meilleure experience culinaire Nos recettes pour elaborer une pate maison fraiche, fait sur place, le jour de la cuisson de nos galettes et crepes</p>
             </div>
             <div className="presentation-point">
@@ -42,7 +42,9 @@ export default function Homepage() {
         </div>
         <div className="presentation-page--gallery">
           <div className="slider-gallery">
-            <img src="https://github.com/theomalaper/CreperieDeTahiti/blob/master/doc/cookies.jpg?raw=true" alt="Gallery Photo"/>
+            <img className="slides"src="https://github.com/theomalaper/CreperieDeTahiti/blob/master/doc/cookies.jpg?raw=true" alt="Gallery Photo"/>
+            <a className="prev"><img src="" alt="Previous Arrow"/></a>
+            <a className="next"><img src="" alt="Next Arrow"/></a>
           </div>
           <div className="button section">
             <button>.</button>
