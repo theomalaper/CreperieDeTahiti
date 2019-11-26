@@ -1,0 +1,56 @@
+.landing-page {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  .landing-page--background {
+    .landing-background-image {
+      object-fit: cover;
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+  .landing-overlay {
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.35;
+  }
+}
+.landing-page--presentation {
+  color: white;
+  width: 45vw;
+  height: 96vh;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 9em;
+  .landing-title {
+    font-size: 55px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    margin: 0.2em 0;
+  }
+  .landing-paragraph {
+    width: 85%;
+    font-size: 18px;
+    font-family: 'Nunito', sans-serif;
+  }
+  .landing-contact-button {
+    width: 35%;
+    min-width: 150px;
+    height: 6%;
+    border-radius: 50px;
+    background-color: #D6D6D6;
+    opacity: 85%;
+    margin-top: 3em;
+    p {
+      font-size: 12px;
+      font-family: 'Nunito', sans-serif;
+    }
+  }
+}
