@@ -6,6 +6,10 @@ import Image2 from '../docs/baked-crepe.jpg'
 import Image3 from '../docs/crepe-stack.jpg'
 import Image4 from '../docs/crepe-orange.jpg'
 import Image5 from '../docs/baked-crepe.jpg'
+import Shop from '../docs/shop.svg'
+import Clock from '../docs/clock.svg'
+import Phone from '../docs/phone.svg'
+import Truck from '../docs/truck.svg'
 import SlideList from './SlideList'
 
 export default function Homepage() {
@@ -72,10 +76,27 @@ export default function Homepage() {
         </div>
       </section>
       <section className="process-presentation-stripe">
-        <div className="process-step">
-          <img className="process-step-icon" src="" alt="Process Step Icon 1"/>
-          <h5 className="process-step-title">Choisir vos produits</h5>
-          <p className="process-step-description">Faites votre choix depuis notre gamme de produits</p>
+        <div className="process">
+          <div className="process-step">
+            <img className="process-step-icon" src={Shop} alt="Process Step Icon 1"/>
+            <h3 className="process-step-title">Choisir vos produits</h3>
+            <p className="process-step-description">Faites votre choix depuis notre gamme de produits</p>
+          </div>
+          <div className="process-step">
+            <img className="process-step-icon" src={Phone} alt="Process Step Icon 2"/>
+            <h3 className="process-step-title">Contactez Nous </h3>
+            <p className="process-step-description">Contactez nous depuis notre rubrique contact </p>
+          </div>
+          <div className="process-step">
+            <img className="process-step-icon" src={Clock} alt="Process Step Icon 3"/>
+            <h3 className="process-step-title">On vous rappelle</h3>
+            <p className="process-step-description">Selon votre commande on vous recontact vite</p>
+          </div>
+          <div className="process-step">
+            <img className="process-step-icon" src={Truck} alt="Process Step Icon 4"/>
+            <h3 className="process-step-title">Livraison Rapide</h3>
+            <p className="process-step-description">Apres s’etre arranger on vous livre quotidienement </p>
+          </div>
         </div>
       </section>
     </div>
