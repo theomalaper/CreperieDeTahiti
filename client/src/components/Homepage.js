@@ -11,6 +11,8 @@ import Clock from '../docs/clock.svg'
 import Phone from '../docs/phone.svg'
 import Truck from '../docs/truck.svg'
 import SlideList from './SlideList'
+import Bookmark from '../docs/bookmark-white.png'
+import ProductArrow from '../docs/product-button-arrow.svg'
 
 export default function Homepage() {
   const [slideIndex, setSlideIndex] = useState(3)
@@ -97,6 +99,89 @@ export default function Homepage() {
             <h3 className="process-step-title">Livraison Rapide</h3>
             <p className="process-step-description">Apres s’etre arranger on vous livre quotidienement </p>
           </div>
+        </div>
+      </section>
+      <section className="product-page">
+        <header className="product-page-header">
+          <div className="product-page-line"></div>
+          <div className="product-header-info">
+            <p>EXPLORE</p>
+            <h2>Notre Gamme</h2>
+          </div>
+        </header>
+        <div className="product-page-content">
+          <div className="product">
+            <div className="product-content-section">
+              <img src={Image2} alt="Product Image 1"/>
+              <div className="product-info">
+                <header>
+                  <h4 className="product-name">Crepes</h4>
+                  <p>Au froment (farine blanche)</p>
+                </header>
+                <div className="product-type-section">
+                  <button className="product-type-button"><p>Pack de 5</p></button>
+                  <button className="product-type-button"><p>Pack de 5</p></button>
+                </div>
+              </div>
+            </div>
+            <div className="product-moreinfo-section">
+              <div className="moreinfo-details">
+                <img src={Bookmark} alt="More Info Icon" />
+                <p>Plus d'information</p>
+              </div>
+              <button className="moreinfo-button"><img src={ProductArrow} alt="More Info Button Icon"/></button>
+            </div>
+          </div>
+          <div className="product">
+            <div className="product-content-section">
+              <img src={Image2} alt="Product Image 1"/>
+              <div className="product-info">
+                <header>
+                  <h4 className="product-name">Crepes</h4>
+                  <p>Au froment (farine blanche)</p>
+                </header>
+                <div className="product-type-section">
+                  <button className="product-type-button"><p>Pack de 5</p></button>
+                  <button className="product-type-button"><p>Pack de 5</p></button>
+                </div>
+              </div>
+            </div>
+            <div className="product-moreinfo-section">
+              <div className="moreinfo-details">
+                <img src={Bookmark} alt="More Info Icon" />
+                <p>Plus d'information</p>
+              </div>
+              <button className="moreinfo-button"><img src={ProductArrow} alt="More Info Button Icon"/></button>
+            </div>
+          </div>
+          <div className="product">
+            <div className="product-content-section">
+              <img src={Image2} alt="Product Image 1"/>
+              <div className="product-info">
+                <header>
+                  <h4 className="product-name">Crepes</h4>
+                  <p>Au froment (farine blanche)</p>
+                </header>
+                <div className="product-type-section">
+                  <button className="product-type-button"><p>Pack de 5</p></button>
+                  <button className="product-type-button"><p>Pack de 5</p></button>
+                </div>
+              </div>
+            </div>
+            <div className="product-moreinfo-section">
+              <div className="moreinfo-details">
+                <img src={Bookmark} alt="More Info Icon" />
+                <p>Plus d'information</p>
+              </div>
+              <button className="moreinfo-button"><img src={ProductArrow} alt="More Info Button Icon"/></button>
+            </div>
+          </div>
+        </div>
+        <div className="product-page-company">
+          <p className="company-subtitle">A propos de nous</p>
+          <h3 className="company-title">Notre Compagnie - Biscuiterie & Creperie </h3>
+          <p className="company-desc">Nous produisont nos produits frais directement dans le centre de Papeete. Notre compagnie a pour but de livrer des produits du fenua de qualité pour que les clients est une bonne experience culinaire de bretagne au milieu du Pacific.</p>
+          <button className="company-contact-button"><p>CONTACTEZ-NOUS</p></button>
         </div>
       </section>
     </div>
