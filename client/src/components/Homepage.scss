@@ -59,6 +59,9 @@
   .landing-contact-button:hover p {
     color: #DA811A;
   }
+  .landing-contact-button:focus {
+    outline: none;
+  }
 }
 
 .presentation-page {
@@ -150,17 +153,96 @@
           color: white;
         }
       }
+      .presentation-product-button:focus {
+        outline: none;
+      }
     }
   }
   .presentation-page--gallery {
     width: 49%;
     height: 100%;
     display: flex;
-    justify-content: flex-start;
-    img {
+    justify-content: space-between;
+    .slider-gallery {
       height: 96vh;
       width: 43vw;
-      object-fit: cover;
+      position: relative;
+      border-radius: 0 0 7px 7px;
+      overflow: hidden;
+      .slides  {
+        width: 0vw;
+        height: 96vh;
+        object-fit: cover;
+      }
+      .show {
+        width: 43vw;
+        height: 96vh;
+      }
+      .slider-button-section {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        button {
+          height: 75px;
+          width: 75px;
+          border: none;
+          opacity: 0.9;
+        }
+        .prev {
+          background-color: #EBEBEB;
+          transition: 0.1s ease-in-out;
+        }
+        .next {
+          background-color: #5A5A5A;
+          transition: 0.1s ease-in-out;
+        }
+        .next:hover {
+          background-color: rgb(41, 41, 41);
+          transition: 0.1s ease-in-out;
+        }
+        .prev:hover {
+          background-color: rgb(171, 171, 171);
+          transition: 0.1s ease-in-out;
+        }
+        button:focus {
+          outline: none;
+        }
+        img  {
+          height: 20px;
+          width: 14px;
+        }
+      }
+    }
+    .button-section {
+      height: 96vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 6vw;
+      .selection-dot {
+        background-color: rgb(206, 206, 206);
+        height: 9px;
+        width: 9px;
+        margin: 0.4em 0;
+        border-radius: 50px;
+        transition: 0.1s ease-in-out;
+        cursor: pointer;
+      }
+      .selection-dot:hover {
+        background-color: rgb(126, 126, 126);
+        transition: 0.1s ease-in-out;
+      }
+      .active {
+        background-color: #DA811A;
+        width: 12px;
+        height: 12px;
+      }
     }
   }
+}
+
+@keyframes slide {
+  0% { left: -100%; width: 0%;}
+  100% { left: 100%; width: 100%;}
 }

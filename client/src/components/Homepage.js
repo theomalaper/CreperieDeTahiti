@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Homepage.scss';
+import SelectionDotList from './SelectionDotList'
+import Image1 from '../docs/artisan.jpg'
+import Image2 from '../docs/baked-crepe.jpg'
+import Image3 from '../docs/crepe-stack.jpg'
+import Image4 from '../docs/crepe-orange.jpg'
+import Image5 from '../docs/baked-crepe.jpg'
+import SlideList from './SlideList'
 
 export default function Homepage() {
+  const [slideIndex, setSlideIndex] = useState(3)
+  const imageGallery = [Image1, Image2, Image3, Image4, Image5]
 
-  const imageGallery = ['https://github.com/theomalaper/CreperieDeTahiti/blob/master/doc/artisan.jpg?raw=true', 'https://github.com/theomalaper/CreperieDeTahiti/blob/master/doc/baked-crepe.jpg?raw=true', 'https://github.com/theomalaper/CreperieDeTahiti/blob/master/doc/crepe-steaming.jpg?raw=true', 'https://github.com/theomalaper/CreperieDeTahiti/blob/master/doc/crepe-stack.jpg?raw=true', 'https://github.com/theomalaper/CreperieDeTahiti/blob/master/doc/cookies.jpg?raw=true']
+  function setIndex(n, e) {
+    e.preventDefault()
+    if (slideIndex + n> imageGallery.length) {
+      setSlideIndex(1)
+    } else if (slideIndex + n < 1) {
+      setSlideIndex(imageGallery.length - 1)
+    } else {
+      setSlideIndex(slideIndex + n)
+    }
+  }
 
   return (
     <div className="hompage">
@@ -42,17 +60,22 @@ export default function Homepage() {
         </div>
         <div className="presentation-page--gallery">
           <div className="slider-gallery">
-            <img className="slides"src="https://github.com/theomalaper/CreperieDeTahiti/blob/master/doc/cookies.jpg?raw=true" alt="Gallery Photo"/>
-            <a className="prev"><img src="" alt="Previous Arrow"/></a>
-            <a className="next"><img src="" alt="Next Arrow"/></a>
+            <SlideList className="slidelist" slideIndex={slideIndex} imageGallery={imageGallery} />
+            <div className="slider-button-section">
+              <button className="prev" onClick={event => setIndex(-1, event)}><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAv%0D%0Ac3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0i%0D%0AMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUx%0D%0AMnB4IiB2aWV3Qm94PSIwIDAgMTk5LjQwNCAxOTkuNDA0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91%0D%0AbmQ6bmV3IDAgMCAxOTkuNDA0IDE5OS40MDQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48Zz4K%0D%0ACTxwb2x5Z29uIHBvaW50cz0iMTM1LjQxMiwwIDM1LjcwOSw5OS43MDIgMTM1LjQxMiwxOTkuNDA0%0D%0AIDE2My42OTUsMTcxLjExOSA5Mi4yNzcsOTkuNzAyIDE2My42OTUsMjguMjg1ICAiIGRhdGEtb3Jp%0D%0AZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAw%0D%0AMDAiIGZpbGw9IiM1MTUwNTAiLz4KPC9nPjwvZz4gPC9zdmc+Cg==" alt="Previous Arrow"/></button>
+              <button className="next" onClick={event => setIndex(1, event)}><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAv%0D%0Ac3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0i%0D%0AMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUx%0D%0AMnB4IiB2aWV3Qm94PSIwIDAgMTk5LjQwNCAxOTkuNDA0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91%0D%0AbmQ6bmV3IDAgMCAxOTkuNDA0IDE5OS40MDQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48ZyB0cmFu%0D%0Ac2Zvcm09Im1hdHJpeCgtMSAxLjIyNDY1ZS0xNiAtMS4yMjQ2NWUtMTYgLTEgMTk5LjQwNCAxOTku%0D%0ANDA0KSI+PGc+Cgk8cG9seWdvbiBwb2ludHM9IjEzNS40MTIsMCAzNS43MDksOTkuNzAyIDEzNS40%0D%0AMTIsMTk5LjQwNCAxNjMuNjk1LDE3MS4xMTkgOTIuMjc3LDk5LjcwMiAxNjMuNjk1LDI4LjI4NSAg%0D%0AIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2Nv%0D%0AbG9yPSIjMDAwMDAwIiBmaWxsPSIjRTI4QjI2Ii8+CjwvZz48L2c+IDwvc3ZnPgo=" alt="Next Arrow"/></button>
+            </div>
           </div>
-          <div className="button section">
-            <button>.</button>
-            <button>.</button>
-            <button>.</button>
-            <button>.</button>
-            <button>.</button>
+          <div className="button-section">
+            <SelectionDotList slideIndex={slideIndex}/>
           </div>
+        </div>
+      </section>
+      <section className="process-presentation-stripe">
+        <div className="process-step">
+          <img className="process-step-icon" src="" alt="Process Step Icon 1"/>
+          <h5 className="process-step-title">Choisir vos produits</h5>
+          <p className="process-step-description">Faites votre choix depuis notre gamme de produits</p>
         </div>
       </section>
     </div>
