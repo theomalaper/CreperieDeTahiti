@@ -291,7 +291,10 @@
 
 .product-page {
   width: 100vw;
-  height: 100vh;
+  height: 110vh;
+  button:focus {
+    outline: none;
+  }
   .product-page-header {
     display: flex;
     width: 100%;
@@ -332,6 +335,9 @@
       height: 44vh;
       overflow: hidden;
       border-radius: 5px;
+      -webkit-box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.1);
+      -moz-box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.1);
+      box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.1);  
       .product-content-section {
         height: 87.5%;
         position: relative;
@@ -401,6 +407,9 @@
                 color: white
               }
             }
+            .product-type-button:focus {
+              outline: none;
+            }
           }
         }
       }
@@ -437,9 +446,76 @@
         }
       }
     }
-    .product:hover .product-info {
-      transform: translateY(-65px);
-      transition-duration: 0.5s;
+    .product:hover {
+      .product-info {
+        transform: translateY(-65px);
+        transition-duration: 0.5s;
+      }
+    }
+  }
+  .product-page-company {
+    width: 72%;
+    height: 40vh;
+    margin: 3em auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-box-shadow: 0px 8px 27px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 8px 27px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 8px 27px 0px rgba(0,0,0,0.25);
+    .company-subtitle {
+      margin: 0;
+      margin-top: 2.5em;
+      color: #C0C0C0;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .company-title {
+      color: #474747;
+      font-family: 'Nunito', sans-serif,;
+      font-weight: bold;
+      font-size: 25px;
+      margin: 0.3em;
+    }
+    .company-title::after {
+      content: '';
+      display: block;
+      border-bottom: 2px solid rgb(228, 135, 29);
+      width: 40px;
+      margin: auto;
+      margin-top: 0.3em
+    }
+    .company-desc {
+      color: #787878;
+      width: 58%;
+      text-align: center;
+      font-family: 'Noto-sans', sans-serif;
+      font-size: 14px;
+    }
+    .company-contact-button {
+      width: 175px;
+      margin: 1.5em 0;
+      border-radius: 25px;
+      height: 40px;
+      border: none;
+      background-color: rgb(255, 150, 29);
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+      p {
+        font-family: 'Nunito', sans-serif;
+        font-weight: bold;
+        font-size: 11px;
+        color: black;
+      }
+    }
+    .company-contact-button:hover {
+      transition: 0.2s ease-in-out;
+      background-color: #4b4b4b;
+      width: 185px;
+      p {
+        color: rgb(223, 223, 223);
+      }
     }
   }
 }
