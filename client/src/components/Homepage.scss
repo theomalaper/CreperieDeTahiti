@@ -245,7 +245,7 @@
 .process-presentation-stripe {
   display: flex;
   justify-content: center;
-  height: 30vh;
+  height: 25vh;
   width: 100vw;
   background-color: rgb(223, 128, 19);
   .process {
@@ -331,7 +331,7 @@
     margin-top: 3em;
     .product {
       border: 1px solid #E4E4E4;
-      width: 29%;
+      width: 29.5%;
       height: 44vh;
       overflow: hidden;
       border-radius: 5px;
@@ -363,7 +363,7 @@
               font-family: 'Raleway', sans-serif;
               font-size: 20px;
               font-weight: 500;
-              margin: 0.5em 0;
+              margin: 0.6em 0;
             }
             h4::after {
               content: '';
@@ -376,19 +376,21 @@
               color: #A7A5A5;
               width: 40%;
               text-align: right;
+              align-self: center;
               font-family: 'Noto-sans', sans-serif;
               font-size: 13px;
             }
           }
           .product-type-section {
-            width: 100%;
+            width: 85%;
             display: flex;
             justify-content: center;
             align-items: center;
+            margin: auto;
             margin-top: 0.5em;
             .product-type-button {
               background-color: #EBEBEB;
-              width: 37%;
+              flex-grow: 1;
               margin: 0 0.8em;
               border: none;
               border-radius: 4px;

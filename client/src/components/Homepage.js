@@ -120,6 +120,27 @@ export default function Homepage() {
                 </header>
                 <div className="product-type-section">
                   <button className="product-type-button"><p>Pack de 5</p></button>
+                  <button className="product-type-button"><p>A l'unité</p></button>
+                </div>
+              </div>
+            </div>
+            <div className="product-moreinfo-section">
+              <div className="moreinfo-details">
+                <img src={Bookmark} alt="More Info Icon" />
+                <p>Plus d'information</p>
+              </div>
+              <button className="moreinfo-button"><img src={ProductArrow} alt="More Info Button Icon"/></button>
+            </div>
+          </div>
+          <div className="product">
+            <div className="product-content-section">
+              <img src={Image3} alt="Product Image 1"/>
+              <div className="product-info">
+                <header>
+                  <h4 className="product-name">Galettes</h4>
+                  <p>Sarrasin</p>
+                </header>
+                <div className="product-type-section">
                   <button className="product-type-button"><p>Pack de 5</p></button>
                 </div>
               </div>
@@ -134,37 +155,14 @@ export default function Homepage() {
           </div>
           <div className="product">
             <div className="product-content-section">
-              <img src={Image2} alt="Product Image 1"/>
+              <img src={Image4} alt="Product Image 1"/>
               <div className="product-info">
                 <header>
-                  <h4 className="product-name">Crepes</h4>
-                  <p>Au froment (farine blanche)</p>
+                  <h4 className="product-name">A venir</h4>
+                  <p></p>
                 </header>
                 <div className="product-type-section">
-                  <button className="product-type-button"><p>Pack de 5</p></button>
-                  <button className="product-type-button"><p>Pack de 5</p></button>
-                </div>
-              </div>
-            </div>
-            <div className="product-moreinfo-section">
-              <div className="moreinfo-details">
-                <img src={Bookmark} alt="More Info Icon" />
-                <p>Plus d'information</p>
-              </div>
-              <button className="moreinfo-button"><img src={ProductArrow} alt="More Info Button Icon"/></button>
-            </div>
-          </div>
-          <div className="product">
-            <div className="product-content-section">
-              <img src={Image2} alt="Product Image 1"/>
-              <div className="product-info">
-                <header>
-                  <h4 className="product-name">Crepes</h4>
-                  <p>Au froment (farine blanche)</p>
-                </header>
-                <div className="product-type-section">
-                  <button className="product-type-button"><p>Pack de 5</p></button>
-                  <button className="product-type-button"><p>Pack de 5</p></button>
+                  <button className="product-type-button"><p>On y travaille</p></button>
                 </div>
               </div>
             </div>
