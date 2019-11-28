@@ -1,6 +1,13 @@
 html {
   scroll-behavior: smooth;
 }
+
+body {
+  p {
+    margin: 0;
+  }
+}
+
 .landing-page {
   width: 100vw;
   height: 100vh;
@@ -86,10 +93,10 @@ html {
   flex-direction: row;
   margin: auto;
   .presentation-page--details {
-    width: 45%;
+    width: 40%;
     .presentation-header {
       display: flex;
-      margin-top: 1.5em;
+      margin-top: 4em;
       .header-info {
         p {
           color: #DA811A;
@@ -123,7 +130,7 @@ html {
         font-family: 'Raleway', sans-serif;
         font-size: 25px;
         font-weight: bold;
-        margin-bottom: 0.6em;
+        margin: 0.6em 0;
       }
       h3::after {
         content: "";
@@ -139,6 +146,7 @@ html {
         color: #7E7E7E;
         font-family: 'Noto Sans', sans-serif;
         font-size: 13px;
+        margin: 1.5em 0;
       }
       .presentation-product-button {
         background-color: #EBEBEB;
@@ -146,13 +154,15 @@ html {
         border-radius: 4px;
         cursor: pointer;
         width: 140px;
+        height: 50px;
         transition: 0.1s ease-in-out;
-        margin-top: 2em;
+        margin-top: 1.5em;
         p {
           color: #757575;
           font-family: 'Nunito', sans-serif;
           font-size: 13px;
           font-weight: 600;
+          margin: 0;
         }
       }
       .presentation-product-button:hover {
@@ -168,63 +178,22 @@ html {
     }
   }
   .presentation-page--gallery {
-    width: 49%;
+    width: 60%;
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    align-items: center;
     .slider-gallery {
-      height: 50%vh;
-      width: 50%;
+      height: 75%;
+      width: 85%;
       position: relative;
-      border-radius: 0 0 7px 7px;
+      border-radius: 3px;
       overflow: hidden;
-      .slides  {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .show {
-        width: 43vw;
-        height: 96vh;
-      }
-      .slider-button-section {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        button {
-          height: 75px;
-          width: 75px;
-          border: none;
-          opacity: 0.9;
-        }
-        .prev {
-          background-color: #EBEBEB;
-          transition: 0.1s ease-in-out;
-        }
-        .next {
-          background-color: #5A5A5A;
-          transition: 0.1s ease-in-out;
-        }
-        .next:hover {
-          background-color: rgb(41, 41, 41);
-          transition: 0.1s ease-in-out;
-        }
-        .prev:hover {
-          background-color: rgb(171, 171, 171);
-          transition: 0.1s ease-in-out;
-        }
-        button:focus {
-          outline: none;
-        }
-        img  {
-          height: 20px;
-          width: 14px;
-        }
-      }
     }
     .button-section {
       height: 96vh;
       display: flex;
+      position: absolute;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -279,7 +248,7 @@ html {
         font-family: 'Nunito', sans-serif;
         font-weight: 800;
         font-size: 15px;
-        margin-bottom: 0.8em;
+        margin: 0.8em 0;
       }
       .process-step-title::after {
         content: '';
@@ -287,7 +256,7 @@ html {
         border-bottom: 2px solid #4F3838;
         width: 20%;
         margin: auto;
-        margin-top: 0.4em;
+        margin-top: 0.5em;
       }
       .process-step-description {
         color: white;
@@ -407,7 +376,7 @@ html {
             .product-type-button {
               background-color: #EBEBEB;
               flex-grow: 1;
-              margin: 0 0.8em;
+              margin: 0 0.5em;
               border: none;
               border-radius: 4px;
               transition-duration: 0.2s;
@@ -416,6 +385,7 @@ html {
                 font-family: 'Noto-sans', sans-serif;
                 font-size: 13px;
                 color: #757575;
+                margin: 0.8em 0;
               }
             }
             .product-type-button:hover {
@@ -584,10 +554,10 @@ html {
       font-size: 30px;
       font-weight: bold;
       text-align: center;
-      margin: 0;
+      margin: 0.5em;
     }
     .formulaire-button {
-      margin-top: 4em;
+      margin-top: 2em;
       height: 50px;
       width: 11%;
       background-color: transparent;
@@ -648,6 +618,7 @@ html {
           font-family: 'Nunito', sans-serif;
           font-size: 15px;
           color: rgb(228, 122, 0);
+          font-weight: bold;
           margin: 0 0 0.5em 0;
         }
         h4:before {
@@ -682,6 +653,7 @@ html {
         h4 {
           font-family: 'Nunito', sans-serif;
           font-size: 15px;
+          font-weight: bold;
           color: rgb(228, 122, 0);
           margin: 0 0 0.5em 0;
         }
@@ -699,6 +671,7 @@ html {
           font-family: 'Nunito', sans-serif;
           font-size: 15px;
           color: rgb(228, 122, 0);
+          font-weight: bold;
           margin: 0 0 0.5em 0;
         }
       }

@@ -3,6 +3,7 @@ import './App.scss';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import Homepage from './Homepage'
 import useApplicationData from '../hooks/useApplicationData'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 export default function App() {
