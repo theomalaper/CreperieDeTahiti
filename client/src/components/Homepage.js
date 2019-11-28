@@ -13,6 +13,12 @@ import Truck from '../docs/truck.svg'
 import SlideList from './SlideList'
 import Bookmark from '../docs/bookmark-white.png'
 import ProductArrow from '../docs/product-button-arrow.svg'
+import Crepe from '../docs/crepe.svg'
+import Telephone from '../docs/telephone.svg'
+import Mail from '../docs/envelope.svg'
+import Google from '../docs/google.svg'
+import Facebook from '../docs/facebook.svg'
+import Instagram from '../docs/instagram.svg'
 
 export default function Homepage() {
   const [slideIndex, setSlideIndex] = useState(3)
@@ -33,7 +39,6 @@ export default function Homepage() {
     <div className="hompage">
       <section className="landing-page">
         <div className="landing-page--background">
-         <img className="landing-background-image" src="https://github.com/theomalaper/CreperieDeTahiti/blob/master/doc/crepe-orange.jpg?raw=true" alt="Landing Page Background"/>
           <div className="landing-overlay"></div>
         </div>
        <div className="landing-page--presentation">
@@ -42,7 +47,7 @@ export default function Homepage() {
           <button className="landing-contact-button"><p>CONTACTEZ NOUS</p></button>
        </div>
       </section>
-      <section className="presentation-page">
+      <section id="presentation-page" className="presentation-page">
         <div className="presentation-page--details">
           <div className="presentation-header">
             <div className="page-line"></div>
@@ -101,7 +106,7 @@ export default function Homepage() {
           </div>
         </div>
       </section>
-      <section className="product-page">
+      <section id="product-page" className="product-page">
         <header className="product-page-header">
           <div className="product-page-line"></div>
           <div className="product-header-info">
@@ -180,6 +185,66 @@ export default function Homepage() {
           <h3 className="company-title">Notre Compagnie - Biscuiterie & Creperie </h3>
           <p className="company-desc">Nous produisont nos produits frais directement dans le centre de Papeete. Notre compagnie a pour but de livrer des produits du fenua de qualité pour que les clients est une bonne experience culinaire de bretagne au milieu du Pacific.</p>
           <button className="company-contact-button"><p>CONTACTEZ-NOUS</p></button>
+        </div>
+      </section>
+      <section className="formulaire-page">
+        <div className="formulaire-background"></div>
+        <div className="formulaire-overlay"></div>
+        <div className="formulaire-info-section">
+          <p className="formulaire-subtitle">CONTACT</p>
+          <h3 className="formulaire-title">Remplissez notre formulaire et nous seront en contact d'ici peux</h3>
+          <button className="formulaire-button"><p>Formulaire</p></button>
+        </div>
+      </section>
+      <section className="footer-page">
+        <div className="footer-info">
+          <header className="footer-info-header">
+            <img src={Crepe} alt="Footer Creperie Icon"/>
+            <h4>Biscuiterie - Creperie de Tahiti</h4>
+          </header>
+          <div className="footer-info-content">
+            <div className="footer-info-about-column">
+              <h4>A propos de nous</h4>
+              <p>Une creperie local livrant des produits frais de qualité directement du Fenua pour une experience bretonne au milieu du Pacifique</p>
+              <div className="about-column-contact">
+                <img src={Mail} alt=""/>
+                <p>bpcf@gmail.com</p>
+              </div>
+              <div className="about-column-contact">
+                <img src={Telephone} alt=""/>
+                <p>+87 29 53 65</p>
+              </div>
+            </div>
+            <div className="footer-info-center-column">
+              <h4>Compagnie</h4>
+              <p>Home</p>
+              <p>Services</p>
+              <p>FAQ</p>
+              <p>Reviews</p>
+              <p>Home</p>
+            </div>
+            <div className="footer-info-center-column">
+              <h4>Compagnie</h4>
+              <p>Home</p>
+              <p>Services</p>
+              <p>FAQ</p>
+              <p>Reviews</p>
+              <p>Home</p>
+            </div>
+            <div className="footer-info-email-column">
+              <h4>Obtenez nos news et offres</h4>
+              <p>Home</p>
+            </div>
+          </div>
+        </div>
+        <div className="footer-extra-info">
+          <p>© Biscuiterie - Creperie de Tahiti tous droits reservé</p>
+          <div className="footer-icon-gallery">
+            <img className="footer-icon-1" src={Google} alt="Google Plus Footer Icon"/>
+            <img className="footer-icon-2" src={Facebook} alt="Facebook Footer Icon"/>
+            <img className="footer-icon-3" src={Instagram} alt="Instagram Footer Icon"/>
+          </div>
+          <p>39 Rue du General de Gaulre, Papeete, Tahiti</p>
         </div>
       </section>
     </div>
