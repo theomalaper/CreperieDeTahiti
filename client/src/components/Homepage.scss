@@ -27,43 +27,49 @@ html {
 }
 .landing-page--presentation {
   color: white;
-  width: 43vw;
-  height: 98vh;
+  width: 100vw;
+  height: 97vh;
   position: absolute;
   top: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 9em;
+  align-items: center;
   .landing-title {
-    font-size: 50px;
+    width: 45%;
+    font-size: 48px;
     font-family: 'Raleway', sans-serif;
-    font-weight: bold;
+    font-weight: 600;
     margin: 0.2em 0;
+    text-align: center;
   }
   .landing-paragraph {
-    width: 85%;
-    font-size: 18px;
+    width: 35%;
+    font-size: 16px;
     font-family: 'Nunito', sans-serif;
-    font-weight: 600;
+    font-weight: 500;
+    text-align: center;
   }
   .landing-contact-button {
-    width: 32%;
-    min-width: 200px;
+    width: 14%;
+    min-width: 150px;
     height: 6%;
-    border-radius: 50px;
-    background-color: #D6D6D6;
-    opacity: 90%;
-    margin-top: 3em;
+    opacity: 87.5%;
+    margin-top: 2.5em;
+    border-radius: 3px;
+    border: none;
+    background: linear-gradient(to right, #ee7000 , #da9500);
     cursor: pointer;
     p {
       font-size: 12px;
       font-family: 'Nunito', sans-serif;
-      font-weight: bold;
+      font-weight: 600;
+      color: rgb(255, 255, 255);
     }
   }
-  .landing-contact-button:hover p {
-    color: #DA811A;
+  .landing-contact-button:hover { 
+    background: linear-gradient(to right, #f57300 , #f9aa00);
+    border: none;
   }
   .landing-contact-button:focus {
     outline: none;
@@ -74,42 +80,36 @@ html {
   position: relative;
   background-color: white;
   z-index: 1000;
-  width: 100vw;
-  height: 100vh;
+  width: 66vw;
+  height: 82vh;
   display: flex;
   flex-direction: row;
+  margin: auto;
   .presentation-page--details {
-    width: 51%;
+    width: 45%;
     .presentation-header {
       display: flex;
       margin-top: 1.5em;
-      .page-line {
-        margin-top: 1.5em;
-        width: 10vw;
-        height: 2px; 
-        background-color: #757575;
-      }
       .header-info {
-        margin-left: 1em;
         p {
           color: #DA811A;
           font-family: 'Nunito', sans-serif;
           font-weight: 600;
-          font-size: 16px;
+          font-size: 14px;
           margin-bottom: 0.5em;
         }
         h2 {
           color: #474747;
           font-family: 'Raleway', sans-serif;
           font-weight: bold;
-          font-size: 35px;
+          font-size: 30px;
           margin: 0 0;
         }
       }
     }
     .presentation-content {
-      padding: 2.5em 11vw;
-      width: 68%;
+      padding: 1.5em 0;
+      width: 100%;
       height: 70%;
       h5 {
         color: #C0C0C0;
@@ -156,7 +156,7 @@ html {
         }
       }
       .presentation-product-button:hover {
-        background-color: #DA811A;
+        background-image: linear-gradient(to right, #ff7700 , #fcac00);
         transition: 0.1s ease-in-out;
         p {
           color: white;
@@ -173,14 +173,14 @@ html {
     display: flex;
     justify-content: space-between;
     .slider-gallery {
-      height: 96vh;
-      width: 43vw;
+      height: 50%vh;
+      width: 50%;
       position: relative;
       border-radius: 0 0 7px 7px;
       overflow: hidden;
       .slides  {
-        width: 0vw;
-        height: 96vh;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
       }
       .show {
@@ -259,7 +259,7 @@ html {
   justify-content: center;
   height: 26vh;
   width: 100vw;
-  background-color: rgb(223, 128, 19);
+  background: linear-gradient(to right, #f47e00 , #f29100);
   .process {
     width: 60%;
     display: flex;
@@ -278,7 +278,7 @@ html {
         color: white;
         font-family: 'Nunito', sans-serif;
         font-weight: 800;
-        font-size: 16px;
+        font-size: 15px;
         margin-bottom: 0.8em;
       }
       .process-step-title::after {
@@ -306,7 +306,7 @@ html {
   background-color: white;
   z-index: 1000;
   width: 100vw;
-  height: 115vh;
+  height: 110vh;
   button:focus {
     outline: none;
   }
@@ -316,43 +316,43 @@ html {
     padding-top: 1.7em;
     .product-page-line {
       margin-top: 1.5em;
-      width: 12.5vw;
+      width: 16vw;
       height: 2px; 
-      background-color: #757575;
     }
     .product-header-info {
       margin-left: 1em;
+      width: 66%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       p {
         color: #DA811A;
         font-family: 'Nunito', sans-serif;
         font-weight: 600;
-        font-size: 16px;
+        font-size: 14px;
         margin-bottom: 0.5em;
       }
       h2 {
         color: #474747;
         font-family: 'Raleway', sans-serif;
         font-weight: bold;
-        font-size: 35px;
+        font-size: 28px;
         margin: 0 0;
       }
     }
   }
   .product-page-content {
     display: flex;
-    width: 72.5%;
+    width: 66%;
     margin: auto;
     justify-content: space-between;
     margin-top: 3em;
     .product {
       border: 1px solid #E4E4E4;
-      width: 29.5%;
-      height: 44vh;
+      width: 29%;
+      height: 40vh;
       overflow: hidden;
       border-radius: 5px;
-      -webkit-box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.1);
-      -moz-box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.1);
-      box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.1);  
       .product-content-section {
         height: 87.5%;
         position: relative;
@@ -364,8 +364,9 @@ html {
         }
         .product-info {
           position: absolute;
-          bottom: -50px;
+          bottom: -68px;
           width: 100%;
+          height: 16vh;
           background-color: white;
           transition-duration: 0.5s;
           header {
@@ -389,7 +390,7 @@ html {
             }
             p {
               color: #A7A5A5;
-              width: 40%;
+              width: 45%;
               text-align: right;
               align-self: center;
               font-family: 'Noto-sans', sans-serif;
@@ -418,10 +419,10 @@ html {
               }
             }
             .product-type-button:hover {
-              background-color: #DA811A;
+              background-color: rgb(203, 203, 203);
               transition-duration: 0.2s;
               p {
-                color: white
+                color: rgb(77, 77, 77);
               }
             }
             .product-type-button:focus {
@@ -471,16 +472,16 @@ html {
     }
   }
   .product-page-company {
-    width: 72%;
-    height: 38vh;
+    width: 66%;
+    height: 36vh;
     margin: auto;
     margin-top: 3em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    -webkit-box-shadow: 0px 8px 27px 0px rgba(0,0,0,0.2);
-    -moz-box-shadow: 0px 8px 27px 0px rgba(0,0,0,0.2);
-    box-shadow: 0px 8px 27px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 8px 25px 0px rgba(0,0,0,0.13);
+    -moz-box-shadow: 0px 8px 25px 0px rgba(0,0,0,0.13);
+    box-shadow: 0px 8px 25px 0px rgba(0,0,0,0.13);
     .company-subtitle {
       margin: 0;
       margin-top: 2em;
@@ -517,22 +518,19 @@ html {
       border-radius: 25px;
       height: 40px;
       border: none;
-      background-color: rgb(255, 150, 29);
+      background-color: #EBEBEB;
       cursor: pointer;
-      transition: 0.2s ease-in-out;
       p {
         font-family: 'Nunito', sans-serif;
         font-weight: bold;
         font-size: 11px;
-        color: black;
+        color: #757575;
       }
     }
     .company-contact-button:hover {
-      transition: 0.2s ease-in-out;
-      background-color: #4b4b4b;
-      width: 185px;
+      background: linear-gradient(to right, #ff7700 , #fcac00);
       p {
-        color: rgb(223, 223, 223);
+        color: white
       }
     }
   }
@@ -583,7 +581,7 @@ html {
     .formulaire-title {
       width: 50%;
       font-family: 'Raleway', sans-serif;
-      font-size: 35px;
+      font-size: 30px;
       font-weight: bold;
       text-align: center;
       margin: 0;
@@ -619,7 +617,7 @@ html {
   width: 100vw;
   height: 52vh;
   .footer-info {
-    width: 70%;
+    width: 68%;
     margin: auto;
     margin-top: 3em;
     .footer-info-header {
@@ -662,7 +660,7 @@ html {
         p {
           color: #6c6c6c;
           font-family: 'Nunito', sans-serif;
-          font-size: 13px;
+          font-size: 12px;
           margin: 0;
         }
         .about-column-contact {
@@ -712,7 +710,7 @@ html {
     align-items: center;
     border-top: 1px solid #B8B8B8;
     height: 23%;
-    padding: 0 11em;
+    padding: 0 12em;
     p {
       color: #828282;
       font-family: 'Nunito', sans-serif;

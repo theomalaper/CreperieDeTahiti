@@ -50,7 +50,6 @@ export default function Homepage() {
       <section id="presentation-page" className="presentation-page">
         <div className="presentation-page--details">
           <div className="presentation-header">
-            <div className="page-line"></div>
             <div className="header-info">
               <p>PRODUITS DU FENUA</p>
               <h2>Artisan Crêpier</h2>
