@@ -10,7 +10,7 @@
     flex-grow: 2;
     display: flex;
     align-items: center;
-    font-family: "Nunito", sans-serif;
+    font-family: "Raleway", sans-serif;
     padding: 0 0 0 4em;
     h3 {
       font-size: 18px;
@@ -69,6 +69,7 @@
 .contact-page {
   height: 100vh;
   width: 100vw;
+  display: flex;
   .contact-page-left {
     color: white;
     width: 41%;
@@ -80,6 +81,7 @@
     align-items: center;
     .contact-page-left-info {
       width: 44%;
+      min-width: 200px;
       margin: 0.5em auto;
       .contact-info-title {
         font-family: "Raleway", sans-serif;
@@ -113,6 +115,95 @@
     .contact-page-left-illustration {
       width: 90%;
       height: 40%;
+    }
+  }
+
+  .contact-page-right {
+    width: 20%;
+    min-width: 250px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    .formulaire-header {
+      text-align: center;
+      width: 95%;
+      margin: 1.5em auto;
+      .formulaire-header-title {
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+        font-size: 30px;
+      }
+      .formulaire-header-subtitle {
+        color: #3a3a3a;
+        font-family: "Nunito", sans-serif;
+        font-size: 14px;
+      }
+    }
+    .formulaire-content {
+      width: 100%;
+      border-top: 1px solid #e98c56;
+      padding: 0.5em 0;
+      display: flex;
+      flex-direction: column;
+      label {
+        font-family: "Raleway", sans-serif;
+        font-size: 13px;
+        font-weight: bold;
+        margin-top: 0.5em;
+      }
+      .formulaire-input {
+        height: 35px;
+        width: 97%;
+        border-radius: 4px;
+        border: none;
+        background-color: #f5f6f7;
+        -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.05);
+        -moz-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.05);
+        box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.05);
+        padding: 0 1em;
+        font-size: 13px;
+      }
+      input:focus {
+        outline: none;
+      }
+      .formulaire-name-section {
+        display: flex;
+        .first-name-input {
+          margin-right: 0.7em;
+        }
+      }
+      .product-selection {
+        width: 58%;
+        display: flex;
+        justify-content: space-between;
+        .product-selection-item {
+          label {
+            margin-left: 1em;
+            color: #c8c8c8;
+            font-weight: 600;
+          }
+        }
+      }
+      .formulaire-button {
+        width: 35%;
+        height: 35px;
+        margin: 1.5em 0;
+        align-self: center;
+        border: none;
+        background-color: #f48f1c;
+        border-radius: 3px;
+        transition: 0.1s ease-in-out;
+        img {
+          height: 15px;
+          width: 15px;
+        }
+      }
+      .formulaire-button:hover {
+        background-color: rgb(74, 174, 89);
+        transition: 0.1s ease-in-out;
+      }
     }
   }
 }

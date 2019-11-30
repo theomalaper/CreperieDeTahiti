@@ -5,6 +5,7 @@ import MailIcon from "../docs/contact-mail.svg";
 import PhoneIcon from "../docs/contact-phone.svg";
 import LocationIcon from "../docs/contact-location.svg";
 import ContactIllustration from "../docs/contact-illustration.svg";
+import CheckIcon from "../docs/contact-check.svg";
 
 export default function Contact() {
   return (
@@ -70,7 +71,80 @@ export default function Contact() {
           alt="contact-page-left-illustration"
         />
       </section>
-      <section classNAme="contact-page-right"></section>
+      <section className="contact-page-right">
+        <div className="formulaire-header">
+          <h3 className="formulaire-header-title">Contactez Nous</h3>
+          <p className="formulaire-header-subtitle">
+            Remplisser ce formulaire et nous seront en contact d'ici peux
+          </p>
+        </div>
+        <form className="formulaire-content">
+          <div className="formulaire-name-section">
+            <div className="first-name-input">
+              <label>Prenom</label>
+              <input
+                type="text"
+                autoComplete="off"
+                className="formulaire-input"
+                name="first-name"
+              />
+            </div>
+            <div className="shop-name-input">
+              <label>Magasin</label>
+              <input
+                className="formulaire-input"
+                type="text"
+                autoComplete="off"
+                name="shop"
+              />
+            </div>
+          </div>
+          <div className="email-input">
+            <label>Email</label>
+            <input
+              className="formulaire-input"
+              type="email"
+              autoComplete="off"
+              name="email"
+            />
+          </div>
+          <div className="phone-input">
+            <label>Telephone</label>
+            <input
+              className="formulaire-input"
+              type="tel"
+              autoComplete="off"
+              name="phone"
+            />
+          </div>
+          <div className="delivery-type-select">
+            <label>Type de livraison</label>
+            <select className="formulaire-input" placeholder="">
+              <option></option>
+              <option>Journalier</option>
+              <option>Hebdomadaire</option>
+              <option>Mensuel</option>
+              <option>Uncertain</option>
+            </select>
+          </div>
+          <div className="product-selection-section">
+            <label>Produits d'interet</label>
+            <div className="product-selection">
+              <div className="product-selection-item">
+                <input type="checkbox" />
+                <label>Crêpe</label>
+              </div>
+              <div className="product-selection-item">
+                <input type="checkbox" />
+                <label>Galette</label>
+              </div>
+            </div>
+          </div>
+          <button className="formulaire-button">
+            <img src={CheckIcon} alt="Contact Check Icon" />
+          </button>
+        </form>
+      </section>
     </section>
   );
 }
