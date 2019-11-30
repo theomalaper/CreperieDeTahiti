@@ -92,9 +92,9 @@ export default function Homepage() {
             completement naturel contactze nous des maintenant pour voir ce que
             l’on peut faire pour vous
           </p>
-          <button className="landing-contact-button">
+          <Link className="landing-contact-button" to="/contact">
             <p>CONTACTEZ NOUS</p>
-          </button>
+          </Link>
         </div>
       </section>
       <section id="presentation-page" className="presentation-page">
@@ -123,9 +123,11 @@ export default function Homepage() {
                 et galettes sont cuites sur les faces
               </p>
             </div>
-            <button className="presentation-product-button">
-              <p>Notre gamme</p>
-            </button>
+            <a href="#gamme">
+              <button className="presentation-product-button">
+                <p>Notre gamme</p>
+              </button>
+            </a>
           </div>
         </div>
         <div className="presentation-page--gallery">
@@ -232,8 +234,7 @@ export default function Homepage() {
       </section>
       <section id="product-page" className="product-page">
         <header className="product-page-header">
-          <div className="product-page-line"></div>
-          <div className="product-header-info">
+          <div className="product-header-info" id="gamme">
             <p>EXPLORE</p>
             <h2>Notre Gamme</h2>
           </div>
