@@ -129,7 +129,7 @@ body {
     width: 14%;
     min-width: 150px;
     height: 6%;
-    opacity: 90%;
+    opacity: 95%;
     margin-top: 2.5em;
     border-radius: 3px;
     border: none;
@@ -416,7 +416,7 @@ body {
             padding: 0 2em;
             h4 {
               color: #292929;
-              font-family: "Raleway", sans-serif;
+              font-family: "Nunito", sans-serif;
               font-size: 20px;
               font-weight: 500;
               margin: 0.6em 0;
@@ -433,7 +433,7 @@ body {
               width: 45%;
               text-align: right;
               align-self: center;
-              font-family: "Noto-sans", sans-serif;
+              font-family: "Nunito", sans-serif;
               font-size: 13px;
             }
           }
@@ -453,7 +453,7 @@ body {
               transition-duration: 0.2s;
               cursor: pointer;
               p {
-                font-family: "Noto-sans", sans-serif;
+                font-family: "Nunito", sans-serif;
                 font-size: 13px;
                 color: #757575;
                 margin: 0.8em 0;
@@ -489,7 +489,7 @@ body {
           p {
             margin-left: 1em;
             color: #a7a5a5;
-            font-family: "Noto-sans", sans-serif;
+            font-family: "Nunito", sans-serif;
             font-size: 14px;
           }
         }
@@ -526,15 +526,15 @@ body {
     .company-subtitle {
       margin: 0;
       margin-top: 2em;
-      color: #c0c0c0;
+      color: #a4a4a4;
       font-family: "Nunito", sans-serif;
-      font-weight: 600;
+      font-weight: 500;
       font-size: 16px;
     }
     .company-title {
       color: #474747;
-      font-family: "Nunito", sans-serif;
-      font-weight: bold;
+      font-family: "Raleway", sans-serif;
+      font-weight: 600;
       font-size: 25px;
       margin: 0.3em;
     }
@@ -543,33 +543,34 @@ body {
       display: block;
       border-bottom: 2px solid rgb(228, 135, 29);
       width: 40px;
-      margin: auto;
-      margin-top: 0.3em;
+      margin: 0.5em auto;
     }
     .company-desc {
-      color: #787878;
+      color: #656565;
       width: 58%;
       text-align: center;
-      font-family: "Noto-sans", sans-serif;
+      font-family: "Nunito", sans-serif;
       font-size: 14px;
     }
     .company-contact-button {
       width: 175px;
       margin: 1.5em 0;
       border-radius: 25px;
-      height: 40px;
+      height: 43px;
       border: none;
-      background-color: #ebebeb;
+      background-color: #e8e8e8;
+      transition: 0.1s ease-in;
       cursor: pointer;
       p {
-        font-family: "Nunito", sans-serif;
+        font-family: "Raleway", sans-serif;
         font-weight: bold;
         font-size: 11px;
         color: #757575;
       }
     }
     .company-contact-button:hover {
-      background: linear-gradient(to right, #ff7700, #fcac00);
+      background-color: #e98c56;
+      transition: 0.1s ease-in;
       p {
         color: white;
       }
@@ -609,7 +610,7 @@ body {
     align-items: center;
     color: white;
     .formulaire-subtitle {
-      font-family: "Noto-sans", sans-serif;
+      font-family: "Nunito", sans-serif;
       font-size: 14px;
     }
     .formulaire-subtitle::after {
@@ -623,14 +624,14 @@ body {
       width: 50%;
       font-family: "Raleway", sans-serif;
       font-size: 30px;
-      font-weight: bold;
+      font-weight: 600;
       text-align: center;
       margin: 0.5em;
     }
     .formulaire-button {
       margin-top: 2em;
       height: 50px;
-      width: 11%;
+      width: 150px;
       background-color: transparent;
       border: 2px solid white;
       transition: 0.2s ease-in-out;
@@ -702,7 +703,7 @@ body {
         p {
           color: #6c6c6c;
           font-family: "Nunito", sans-serif;
-          font-size: 12px;
+          font-size: 14px;
           margin: 0;
         }
         .about-column-contact {
@@ -731,7 +732,7 @@ body {
         p {
           color: #6c6c6c;
           font-family: "Nunito", sans-serif;
-          font-size: 13px;
+          font-size: 14px;
           margin: 0.5em 0;
         }
       }
@@ -759,7 +760,7 @@ body {
       color: #828282;
       font-family: "Nunito", sans-serif;
       font-size: 13px;
-      font-weight: bold;
+      font-weight: 600;
     }
     .footer-icon-gallery {
       display: flex;

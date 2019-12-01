@@ -12,15 +12,17 @@ export default function Contact() {
     <section className="contact-page">
       <header className="Contact-nav-bar">
         <section className="Contact-nav-bar-left">
-          <h3>Biscuiterie - Crêperie de Tahiti</h3>
+          <Link className="contact-title-link" to="/">
+            <h3>Biscuiterie - Crêperie de Tahiti</h3>
+          </Link>
         </section>
         <section className="Contact-nav-bar-right">
-          <a href="#presentation-page" className="Nav-bar-links react-links">
+          <Link to="/" className="Nav-bar-links react-links">
             Processus
-          </a>
-          <a href="#product-page" className="Nav-bar-links react-links">
+          </Link>
+          <Link to="/" className="Nav-bar-links react-links">
             Gamme
-          </a>
+          </Link>
           <Link className="Nav-bar-links react-links" to="/">
             A propos
           </Link>

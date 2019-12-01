@@ -46,7 +46,7 @@ export default function Homepage() {
   };
 
   return (
-    <div className="hompage">
+    <div className="homepage">
       <header className="Homepage-nav-bar">
         <section className="Homepage-nav-bar-left">
           <h3>Biscuiterie - Crêperie de Tahiti</h3>
@@ -58,9 +58,9 @@ export default function Homepage() {
           <a href="#product-page" className="Nav-bar-links react-links">
             Gamme
           </a>
-          <Link className="Nav-bar-links react-links" to="/">
+          <a href="#about" className="Nav-bar-links react-links">
             A propos
-          </Link>
+          </a>
           <Link className="Nav-bar-links react-links" to="/contact">
             Contact
           </Link>
@@ -79,7 +79,7 @@ export default function Homepage() {
           </button>
         </section>
       </header>
-      <section className="landing-page">
+      <section className="landing-page" id="landing-page">
         <div className="landing-page--background">
           <div className="landing-overlay"></div>
         </div>
@@ -330,12 +330,14 @@ export default function Homepage() {
             de qualité pour que les clients est une bonne experience culinaire
             de bretagne au milieu du Pacific.
           </p>
-          <button className="company-contact-button">
-            <p>CONTACTEZ-NOUS</p>
-          </button>
+          <Link to="/contact">
+            <button className="company-contact-button">
+              <p>CONTACTEZ-NOUS</p>
+            </button>
+          </Link>
         </div>
       </section>
-      <section className="formulaire-page">
+      <section className="formulaire-page" id="about">
         <div className="formulaire-background"></div>
         <div className="formulaire-overlay"></div>
         <div className="formulaire-info-section">
@@ -343,9 +345,11 @@ export default function Homepage() {
           <h3 className="formulaire-title">
             Remplissez notre formulaire et nous seront en contact d'ici peux
           </h3>
-          <button className="formulaire-button">
-            <p>Formulaire</p>
-          </button>
+          <Link to="/contact">
+            <button className="formulaire-button">
+              <p>Formulaire</p>
+            </button>
+          </Link>
         </div>
       </section>
       <section className="footer-page">
@@ -359,8 +363,7 @@ export default function Homepage() {
               <h4>A propos de nous</h4>
               <p>
                 Une creperie local livrant des produits frais de qualité
-                directement du Fenua pour une experience bretonne au milieu du
-                Pacifique
+                directement du Fenua.
               </p>
               <div className="about-column-contact">
                 <img src={Mail} alt="" />
@@ -373,19 +376,36 @@ export default function Homepage() {
             </div>
             <div className="footer-info-center-column">
               <h4>Compagnie</h4>
-              <p>Home</p>
-              <p>Services</p>
-              <p>FAQ</p>
-              <p>Reviews</p>
-              <p>Home</p>
+              <a href="/#landing-page">
+                <p>Home</p>
+              </a>
+              <Link to="/contact">
+                <p>Contact</p>
+              </Link>
+              <a href="#presentation-page">
+                <p>FAQ</p>
+              </a>
+              <a href="#">
+                <p>Reviews</p>
+              </a>
+              <Link to="/contact">
+                <p>Services</p>
+              </Link>
             </div>
             <div className="footer-info-center-column">
-              <h4>Compagnie</h4>
-              <p>Home</p>
-              <p>Services</p>
-              <p>FAQ</p>
-              <p>Reviews</p>
-              <p>Home</p>
+              <h4>Liens</h4>
+              <a href="#">
+                <p>Crepe</p>
+              </a>
+              <a href="#">
+                <p>Galette</p>
+              </a>
+              <a href="#gamme">
+                <p>Gamme</p>
+              </a>
+              <a href="#presentation-page">
+                <p>Info</p>
+              </a>
             </div>
             <div className="footer-info-email-column">
               <h4>Obtenez nos news et offres</h4>
