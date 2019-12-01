@@ -137,6 +137,7 @@ export default function Homepage() {
               height={600}
               direction={direction}
               onSelect={handleSelect}
+              interval={null}
             >
               <Carousel.Item>
                 <img

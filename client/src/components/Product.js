@@ -1,35 +1,38 @@
 import React, { useState } from "react";
-import "./Contact.scss";
+import "./Product.scss";
 import { Link } from "react-router-dom";
-import MailIcon from "../docs/contact-mail.svg";
-import PhoneIcon from "../docs/contact-phone.svg";
-import LocationIcon from "../docs/contact-location.svg";
-import ContactIllustration from "../docs/contact-illustration.svg";
-import CheckIcon from "../docs/contact-check.svg";
+import Carousel from "react-bootstrap/Carousel";
+import Crepe1 from "../docs/baked-crepe.jpg";
+import Crepe2 from "../docs/artisan.jpg";
+import Crepe3 from "../docs/crepe-orange.jpg";
+import Crepe4 from "../docs/crepe-stack.jpg";
+import BackArrow from "../docs/product-back-arrow.svg";
 
-export default function Contact() {
-  const [name, setName] = useState("");
-  const [shopName, setShopName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [deliveryType, setDeliveryType] = useState(null);
+export default function Product() {
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(null);
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+    setDirection(e.direction);
+  };
 
   return (
-    <section className="contact-page">
-      <header className="Contact-nav-bar">
-        <section className="Contact-nav-bar-left">
-          <Link className="contact-title-link" to="/">
+    <section className="product-presentation-page">
+      <header className="Product-nav-bar">
+        <section className="Product-nav-bar-left">
+          <Link className="Product-title-link" to="/">
             <h3>Biscuiterie - Crêperie de Tahiti</h3>
           </Link>
         </section>
-        <section className="Contact-nav-bar-right">
+        <section className="Product-nav-bar-right">
           <Link to="/" className="Nav-bar-links react-links">
             Processus
           </Link>
           <Link to="/" className="Nav-bar-links react-links">
             Gamme
           </Link>
-          <Link className="Nav-bar-links react-links" to="/product">
+          <Link className="Nav-bar-links react-links" to="/">
             A propos
           </Link>
           <Link className="Nav-bar-links react-links" to="/contact">
@@ -50,121 +53,102 @@ export default function Contact() {
           </button>
         </section>
       </header>
-      <section className="contact-page-left">
-        <div className="contact-page-left-info">
-          <h3 className="contact-info-title">Nos infos</h3>
-          <p className="contact-info-subtitle">
-            Vous n'aimez pas les formulaires? Contactez nous ici:
-          </p>
-          <div className="contact-info-type">
-            <img src={MailIcon} alt="Contact Mail Icon" />
-            <p>crepesdetahiti@gmail.com</p>
-          </div>
-          <div className="contact-info-type">
-            <img src={PhoneIcon} alt="Contact Phone Icon" />
-            <p>40.57.74.75</p>
-          </div>
-          <div className="contact-info-type">
-            <img src={LocationIcon} alt="Contact Location Icon" />
-            <p>43708 Fare Tony, 98712 Papeete</p>
-          </div>
-          <div className="contact-info-type">
-            <p className="info-tahiti-number">N° Tahiti: C74396</p>
-            <p>RCS: 1884B</p>
-          </div>
-        </div>
-        <img
-          className="contact-page-left-illustration"
-          src={ContactIllustration}
-          alt="contact-page-left-illustration"
-        />
+      <section className="product-page-left">
+        <Carousel
+          width={500}
+          direction={direction}
+          onSelect={handleSelect}
+          interval={null}
+          activeIndex={index}
+        >
+          <Carousel.Item>
+            <img className="d-block" src={Crepe1} alt="First slide" />
+            <Carousel.Caption>
+              <h3>NATURE</h3>
+              <p>Pack de 5</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block" src={Crepe2} alt="Second slide" />
+            <Carousel.Caption>
+              <h3>COCO</h3>
+              <p>Pack de 5</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block" src={Crepe3} alt="Third slide" />
+            <Carousel.Caption>
+              <h3>POMME</h3>
+              <p>Pack de 5</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block" src={Crepe4} alt="Fourth slide" />
+            <Carousel.Caption>
+              <h3>RHUM</h3>
+              <p>Pack de 5</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
       </section>
-      <section className="contact-page-right">
-        <div className="formulaire-header">
-          <h3 className="formulaire-header-title">Contactez Nous</h3>
-          <p className="formulaire-header-subtitle">
-            Remplisser ce formulaire et nous seront en contact d'ici peux
+      <section className="product-page-right">
+        <header className="product-page-right-header">
+          <div className="right-header-info">
+            <p>PRODUIT</p>
+            <h3>Crêpe</h3>
+          </div>
+          <Link to="/">
+            <button>
+              <img src={BackArrow} alt="Product Back Icon" />
+              <p>Retour</p>
+            </button>
+          </Link>
+        </header>
+        <div className="product-page-right-content">
+          <p className="product-composition content-line">
+            <span className="product-composition-header">Composition</span>:
+            Farine de blé (blanche), Oeufs, Lait, Matières grasses, Eau, Sel,
+            Sucre
           </p>
+          <div className="product-type-section content-line">
+            <h5>Produits</h5>
+            <div className="product-type-selection">
+              <button className="product-type-button">
+                <p>Pack de 5</p>
+              </button>
+              <button className="product-type-button">
+                <p>A l'unité</p>
+              </button>
+            </div>
+          </div>
+          <div className="product-taste-section content-line">
+            <h5>Types</h5>
+            <div className="product-taste-selection">
+              <button className="product-taste-button">
+                <p>NATURE</p>
+              </button>
+              <button className="product-taste-button">
+                <p>COCO</p>
+              </button>
+              <button className="product-taste-button">
+                <p>POMME</p>
+              </button>
+              <button className="product-taste-button">
+                <p>RHUM</p>
+              </button>
+            </div>
+          </div>
+          <div className="product-review-section content-line">
+            <div className="product-review">
+              <p>“Produits Genial et livraivons rapides. Tres Appreciés.”</p>
+              <h6>Week end</h6>
+            </div>
+            <div className="product-review">
+              <p>“Produits Genial et livraivons rapides. Tres Appreciés.”</p>
+              <h6>Hyper U</h6>
+            </div>
+          </div>
         </div>
-        <form className="formulaire-content">
-          <div className="formulaire-name-section">
-            <div className="first-name-input">
-              <label>Prenom</label>
-              <input
-                type="text"
-                autoComplete="off"
-                className="formulaire-input"
-                name="first-name"
-                value={name}
-                onChange={event => setName(event.target.value)}
-              />
-            </div>
-            <div className="shop-name-input">
-              <label>Magasin</label>
-              <input
-                className="formulaire-input"
-                type="text"
-                autoComplete="off"
-                name="shop"
-                value={shopName}
-                onChange={event => setShopName(event.target.value)}
-              />
-            </div>
-          </div>
-          <div className="email-input">
-            <label>Email</label>
-            <input
-              className="formulaire-input"
-              type="email"
-              autoComplete="off"
-              name="email"
-              value={email}
-              onChange={event => setEmail(event.target.value)}
-            />
-          </div>
-          <div className="phone-input">
-            <label>Telephone</label>
-            <input
-              className="formulaire-input"
-              type="tel"
-              autoComplete="off"
-              name="phone"
-              value={phone}
-              onChange={event => setPhone(event.target.value)}
-            />
-          </div>
-          <div className="delivery-type-select">
-            <label>Type de livraison</label>
-            <select
-              className="formulaire-input"
-              placeholder=""
-              value={deliveryType}
-              onChange={event => setDeliveryType(event.target.value)}
-            >
-              <option></option>
-              <option>Journalier</option>
-              <option>Hebdomadaire</option>
-              <option>Mensuel</option>
-              <option>Uncertain</option>
-            </select>
-          </div>
-          <div className="product-selection-section">
-            <label>Produits d'interet</label>
-            <div className="product-selection">
-              <div className="product-selection-item">
-                <input type="checkbox" />
-                <label>Crêpe</label>
-              </div>
-              <div className="product-selection-item">
-                <input type="checkbox" />
-                <label>Galette</label>
-              </div>
-            </div>
-          </div>
-          <button className="formulaire-button">
-            <img src={CheckIcon} alt="Contact Check Icon" />
-          </button>
-        </form>
       </section>
     </section>
   );
