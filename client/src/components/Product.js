@@ -13,6 +13,7 @@ import RhumIcon from "../docs/rhum.svg";
 import AppleIcon from "../docs/apple.svg";
 import ProductType from "./ProductType";
 import ProductTaste from "./ProductTaste";
+import CarouselItem from "./CarouselItem";
 
 export default function Product() {
   const [index, setIndex] = useState(0);
@@ -25,82 +26,105 @@ export default function Product() {
   };
 
   const productTypes = [
-    { id: 0, name: "Pack de 5" },
-    { id: 1, name: "A l'unité" }
-  ];
-
-  const productTastes = [
     {
       id: 0,
-      name: "NATURE",
-      icon: CrepeIcon,
-      products: ["Pack de 5", "A l'unité"]
+      name: "Pack de 5",
+      tastes: [
+        {
+          id: 0,
+          name: "NATURE",
+          icon: CrepeIcon,
+          image: Crepe1
+        },
+        {
+          id: 1,
+          name: "COCO",
+          icon: CoconutIcon,
+          image: Crepe2
+        },
+        {
+          id: 2,
+          name: "RHUM",
+          icon: RhumIcon,
+          image: Crepe3
+        },
+        {
+          id: 3,
+          name: "POMME",
+          icon: AppleIcon,
+          image: Crepe4
+        }
+      ]
     },
     {
       id: 1,
-      name: "COCO",
-      icon: CoconutIcon,
-      products: ["Pack de 5", "A l'unité"]
-    },
-    {
-      id: 2,
-      name: "RHUM",
-      icon: RhumIcon,
-      products: ["Pack de 5"]
-    },
-    {
-      id: 3,
-      name: "POMME",
-      icon: AppleIcon,
-      products: ["Pack de 5"]
-    },
-    {
-      id: 4,
-      name: "CHOCOLAT",
-      icon: CoconutIcon,
-      products: ["A l'unité"]
-    },
-    {
-      id: 5,
-      name: "CHOCOLAT COCO",
-      icon: CoconutIcon,
-      products: ["A l'unité"]
+      name: "A l'unité",
+      tastes: [
+        {
+          id: 0,
+          name: "NATURE",
+          icon: CrepeIcon,
+          products: ["Pack de 5", "A l'unité"],
+          image: Crepe4
+        },
+        {
+          id: 1,
+          name: "CHOCOLAT",
+          icon: CoconutIcon,
+          products: ["A l'unité"],
+          image: Crepe3
+        },
+        {
+          id: 2,
+          name: "CHOCOLAT COCO",
+          icon: CoconutIcon,
+          products: ["A l'unité"],
+          image: Crepe2
+        }
+      ]
     }
   ];
 
-  const productTasteList = productTastes.map(taste => {
-    if (taste.products.includes(productType)) {
-      return (
-        <ProductTaste
-          name={taste.name}
-          key={taste.id}
-          handleClick={() => setIndex(taste.id)}
-          icon={taste.icon}
-        />
-      );
-    }
+  const productList = productTypes.map(product => {
+    return (
+      <ProductType
+        name={product.name}
+        selected={product.name === productType ? true : false}
+        key={product.id}
+        handleSelect={() => {
+          setProductType(product.name);
+          setIndex(0);
+        }}
+      />
+    );
   });
 
-  const productList = productTypes.map(product => {
-    if (productType === product.name) {
-      return (
-        <ProductType
-          name={product.name}
-          selected={true}
-          key={product.id}
-          handleSelect={() => setProductType(product.name)}
-        />
-      );
-    } else {
-      return (
-        <ProductType
-          name={product.name}
-          selected={false}
-          key={product.id}
-          handleSelect={() => setProductType(product.name)}
-        />
-      );
-    }
+  const productTastes = productTypes.find(
+    product => product.name === productType
+  ).tastes;
+
+  const productTasteList = productTastes.map(taste => {
+    return (
+      <ProductTaste
+        name={taste.name}
+        key={taste.id}
+        selected={taste.id === index ? true : false}
+        handleClick={() => setIndex(taste.id)}
+        icon={taste.icon}
+      />
+    );
+  });
+
+  const carousel = productTastes.map(taste => {
+    return (
+      <Carousel.Item>
+        <img className="d-block" src={taste.image} alt="First slide" />
+        <Carousel.Caption>
+          <h3>{taste.name}</h3>
+          <p>{productType}</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    );
   });
 
   return (
@@ -147,34 +171,7 @@ export default function Product() {
           interval={null}
           activeIndex={index}
         >
-          <Carousel.Item>
-            <img className="d-block" src={Crepe1} alt="First slide" />
-            <Carousel.Caption>
-              <h3>NATURE</h3>
-              <p>Pack de 5</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="d-block" src={Crepe2} alt="Second slide" />
-            <Carousel.Caption>
-              <h3>COCO</h3>
-              <p>Pack de 5</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="d-block" src={Crepe3} alt="Third slide" />
-            <Carousel.Caption>
-              <h3>POMME</h3>
-              <p>Pack de 5</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="d-block" src={Crepe4} alt="Fourth slide" />
-            <Carousel.Caption>
-              <h3>RHUM</h3>
-              <p>Pack de 5</p>
-            </Carousel.Caption>
-          </Carousel.Item>
+          {carousel}
         </Carousel>
       </section>
       <section className="product-page-right">
