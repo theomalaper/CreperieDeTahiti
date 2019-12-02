@@ -1,14 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Product.scss";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Carousel from "react-bootstrap/Carousel";
 import ProductType from "./ProductType";
 import ProductTaste from "./ProductTaste";
+import axios from "axios";
 
-export default function Product() {
+export default function Product(props) {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(null);
   const [productType, setProductType] = useState("Pack de 5");
+
+  let params = useParams();
+
+  useEffect(() => {
+    axios
+      .get(`/products/${params.productId}`)
+      .then(result => {
+        props.dispatch({ type: props.SET_PRODUCT_DATA, product: result.data });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);

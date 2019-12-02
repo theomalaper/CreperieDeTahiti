@@ -15,7 +15,7 @@ import useApplicationData from "../hooks/useApplicationData";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function App() {
-  const { state, dispatch } = useApplicationData();
+  const { state, dispatch, SET_PRODUCT_DATA } = useApplicationData();
 
   // const { location } = useContext(__RouterContext);
   // const transitions = useTransition(location, location => location.pathname, {
@@ -33,8 +33,12 @@ export default function App() {
         <Route exact path="/contact">
           <Contact state={state} dispatch={dispatch} />
         </Route>
-        <Route exact path="/product">
-          <Product state={state} dispatch={dispatch} />
+        <Route path="/product/:productId">
+          <Product
+            state={state}
+            dispatch={dispatch}
+            SET_PRODUCT_DATA={SET_PRODUCT_DATA}
+          />
         </Route>
       </Switch>
       <footer></footer>
