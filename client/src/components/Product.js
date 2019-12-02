@@ -7,15 +7,101 @@ import Crepe2 from "../docs/artisan.jpg";
 import Crepe3 from "../docs/crepe-orange.jpg";
 import Crepe4 from "../docs/crepe-stack.jpg";
 import BackArrow from "../docs/product-back-arrow.svg";
+import CoconutIcon from "../docs/coconut.svg";
+import CrepeIcon from "../docs/product-crepe.svg";
+import RhumIcon from "../docs/rhum.svg";
+import AppleIcon from "../docs/apple.svg";
+import ProductType from "./ProductType";
+import ProductTaste from "./ProductTaste";
 
 export default function Product() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(null);
+  const [productType, setProductType] = useState("Pack de 5");
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
     setDirection(e.direction);
   };
+
+  const productTypes = [
+    { id: 0, name: "Pack de 5" },
+    { id: 1, name: "A l'unité" }
+  ];
+
+  const productTastes = [
+    {
+      id: 0,
+      name: "NATURE",
+      icon: CrepeIcon,
+      products: ["Pack de 5", "A l'unité"]
+    },
+    {
+      id: 1,
+      name: "COCO",
+      icon: CoconutIcon,
+      products: ["Pack de 5", "A l'unité"]
+    },
+    {
+      id: 2,
+      name: "RHUM",
+      icon: RhumIcon,
+      products: ["Pack de 5"]
+    },
+    {
+      id: 3,
+      name: "POMME",
+      icon: AppleIcon,
+      products: ["Pack de 5"]
+    },
+    {
+      id: 4,
+      name: "CHOCOLAT",
+      icon: CoconutIcon,
+      products: ["A l'unité"]
+    },
+    {
+      id: 5,
+      name: "CHOCOLAT COCO",
+      icon: CoconutIcon,
+      products: ["A l'unité"]
+    }
+  ];
+
+  const productTasteList = productTastes.map(taste => {
+    if (taste.products.includes(productType)) {
+      return (
+        <ProductTaste
+          name={taste.name}
+          key={taste.id}
+          handleClick={() => setIndex(taste.id)}
+          icon={taste.icon}
+        />
+      );
+    }
+  });
+
+  const productList = productTypes.map(product => {
+    if (productType === product.name) {
+      return (
+        <ProductType
+          name={product.name}
+          selected={true}
+          key={product.id}
+          handleSelect={() => setProductType(product.name)}
+        />
+      );
+    } else {
+      return (
+        <ProductType
+          name={product.name}
+          selected={false}
+          key={product.id}
+          handleSelect={() => setProductType(product.name)}
+        />
+      );
+    }
+  });
 
   return (
     <section className="product-presentation-page">
@@ -112,40 +198,23 @@ export default function Product() {
           </p>
           <div className="product-type-section content-line">
             <h5>Produits</h5>
-            <div className="product-type-selection">
-              <button className="product-type-button">
-                <p>Pack de 5</p>
-              </button>
-              <button className="product-type-button">
-                <p>A l'unité</p>
-              </button>
-            </div>
+            <div className="product-type-selection">{productList}</div>
           </div>
           <div className="product-taste-section content-line">
             <h5>Types</h5>
-            <div className="product-taste-selection">
-              <button className="product-taste-button">
-                <p>NATURE</p>
-              </button>
-              <button className="product-taste-button">
-                <p>COCO</p>
-              </button>
-              <button className="product-taste-button">
-                <p>POMME</p>
-              </button>
-              <button className="product-taste-button">
-                <p>RHUM</p>
-              </button>
-            </div>
+            <div className="product-taste-selection">{productTasteList}</div>
           </div>
           <div className="product-review-section content-line">
-            <div className="product-review">
-              <p>“Produits Genial et livraivons rapides. Tres Appreciés.”</p>
-              <h6>Week end</h6>
-            </div>
-            <div className="product-review">
-              <p>“Produits Genial et livraivons rapides. Tres Appreciés.”</p>
-              <h6>Hyper U</h6>
+            <h5>Revu de nos clients</h5>
+            <div className="product-review-selection">
+              <div className="product-review">
+                <p>“Produits Genial et livraivons rapides. Tres Appreciés.”</p>
+                <h6>Week end</h6>
+              </div>
+              <div className="product-review">
+                <p>“Produits Genial et livraivons rapides. Tres Appreciés.”</p>
+                <h6>Hyper U</h6>
+              </div>
             </div>
           </div>
         </div>

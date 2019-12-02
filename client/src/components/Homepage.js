@@ -264,9 +264,11 @@ export default function Homepage() {
                 <img src={Bookmark} alt="More Info Icon" />
                 <p>Plus d'information</p>
               </div>
-              <button className="moreinfo-button">
-                <img src={ProductArrow} alt="More Info Button Icon" />
-              </button>
+              <Link to="/product">
+                <button className="moreinfo-button">
+                  <img src={ProductArrow} alt="More Info Button Icon" />
+                </button>
+              </Link>
             </div>
           </div>
           <div className="product">
