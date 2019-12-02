@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import "./Homepage.scss";
-import SelectionDotList from "./SelectionDotList";
 import Image1 from "../docs/artisan.jpg";
 import Image2 from "../docs/baked-crepe.jpg";
 import Image3 from "../docs/crepe-stack.jpg";
 import Image4 from "../docs/crepe-orange.jpg";
-import Image5 from "../docs/baked-crepe.jpg";
 import Shop from "../docs/shop.svg";
 import Clock from "../docs/clock.svg";
 import Phone from "../docs/phone.svg";
 import Truck from "../docs/truck.svg";
-import SlideList from "./SlideList";
 import Bookmark from "../docs/bookmark-white.png";
 import ProductArrow from "../docs/product-button-arrow.svg";
 import Crepe from "../docs/crepe.svg";
@@ -23,9 +20,6 @@ import Carousel from "react-bootstrap/Carousel";
 import { Link } from "react-router-dom";
 
 export default function Homepage() {
-  // const [slideIndex, setSlideIndex] = useState(3)
-  // const imageGallery = [Image1, Image2, Image3, Image4, Image5]
-
   // function setIndex(n, e) {
   //   e.preventDefault()
   //   if (slideIndex + n> imageGallery.length) {
@@ -138,6 +132,7 @@ export default function Homepage() {
               direction={direction}
               onSelect={handleSelect}
               interval={null}
+              activeIndex={index}
             >
               <Carousel.Item>
                 <img

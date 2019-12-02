@@ -1,30 +1,30 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const Product = require('../models/Product')
-const Product_type = require('../models/Product_type')
-const Product_type_taste = require('../models/Product_type_taste')
+const Product = require("../models/Product");
+const Product_type = require("../models/Product_type");
+const Product_type_taste = require("../models/Product_type_taste");
 
 // Get all the products of the website
-router.get('/', function(req, res, next) {
+router.get("/", function(req, res, next) {
   Product.find({})
-  .then(result => {
-    res.status(200).json(result)
-  })
-  .catch(err => {
-    res.status(400).json({ error: err })
-  })
+    .then(result => {
+      res.status(200).json(result);
+    })
+    .catch(err => {
+      res.status(400).json({ error: err });
+    });
 });
 
 // Get a single product based on its id
-router.get('/:id', (req, res) => {
+router.get("/:id", (req, res) => {
   Product.find({ _id: req.params.id })
     .then(result => {
-      res.status(200).json(result[0])
+      res.status(200).json(result[0]);
     })
     .catch(err => {
-      res.status(400).json({ error: err })
-    })
-})
+      res.status(400).json({ error: err });
+    });
+});
 
 // post a new product on the site
 // router.post('/', (req, res) => {
@@ -45,15 +45,15 @@ router.get('/:id', (req, res) => {
 // })
 
 //Get all the product types for a single product
-router.get('/:id/types/', (req, res) => {
+router.get("/:id/types/", (req, res) => {
   Product_type.find({ product_id: req.params.id })
     .then(result => {
-      res.status(200).json(result)
+      res.status(200).json(result);
     })
     .catch(err => {
-      res.send(400).json({ error: err })
-    })
-})
+      res.send(400).json({ error: err });
+    });
+});
 
 // router.post('/type', (req, res) => {
 //   const product_type = new Product_type({
@@ -72,15 +72,15 @@ router.get('/:id/types/', (req, res) => {
 // })
 
 //Get all of the taste for a single product type
-router.get('/types/:id/tastes', (req, res) => {
+router.get("/types/:id/tastes", (req, res) => {
   Product_type_taste.find({ product_type_id: req.params.id })
     .then(result => {
-      res.status(200).json(result)
+      res.status(200).json(result);
     })
     .catch(err => {
-      res.status(400).json({ error: err })
-    })
-})
+      res.status(400).json({ error: err });
+    });
+});
 
 // router.post('/type/taste', (req, res) => {
 //   const product_type_taste = new Product_type_taste({

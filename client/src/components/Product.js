@@ -2,18 +2,8 @@ import React, { useState } from "react";
 import "./Product.scss";
 import { Link } from "react-router-dom";
 import Carousel from "react-bootstrap/Carousel";
-import Crepe1 from "../docs/baked-crepe.jpg";
-import Crepe2 from "../docs/artisan.jpg";
-import Crepe3 from "../docs/crepe-orange.jpg";
-import Crepe4 from "../docs/crepe-stack.jpg";
-import BackArrow from "../docs/product-back-arrow.svg";
-import CoconutIcon from "../docs/coconut.svg";
-import CrepeIcon from "../docs/product-crepe.svg";
-import RhumIcon from "../docs/rhum.svg";
-import AppleIcon from "../docs/apple.svg";
 import ProductType from "./ProductType";
 import ProductTaste from "./ProductTaste";
-import CarouselItem from "./CarouselItem";
 
 export default function Product() {
   const [index, setIndex] = useState(0);
@@ -25,67 +15,81 @@ export default function Product() {
     setDirection(e.direction);
   };
 
-  const productTypes = [
-    {
-      id: 0,
-      name: "Pack de 5",
-      tastes: [
-        {
-          id: 0,
-          name: "NATURE",
-          icon: CrepeIcon,
-          image: Crepe1
-        },
-        {
-          id: 1,
-          name: "COCO",
-          icon: CoconutIcon,
-          image: Crepe2
-        },
-        {
-          id: 2,
-          name: "RHUM",
-          icon: RhumIcon,
-          image: Crepe3
-        },
-        {
-          id: 3,
-          name: "POMME",
-          icon: AppleIcon,
-          image: Crepe4
-        }
-      ]
-    },
-    {
-      id: 1,
-      name: "A l'unité",
-      tastes: [
-        {
-          id: 0,
-          name: "NATURE",
-          icon: CrepeIcon,
-          products: ["Pack de 5", "A l'unité"],
-          image: Crepe4
-        },
-        {
-          id: 1,
-          name: "CHOCOLAT",
-          icon: CoconutIcon,
-          products: ["A l'unité"],
-          image: Crepe3
-        },
-        {
-          id: 2,
-          name: "CHOCOLAT COCO",
-          icon: CoconutIcon,
-          products: ["A l'unité"],
-          image: Crepe2
-        }
-      ]
-    }
-  ];
+  const product = {
+    name: "Crêpe",
+    composition:
+      "Composition: Farine de blé (blanche), Oeufs, Lait, Matières grasses, Eau, Sel, Sucre",
+    main_ingredient: "Au froment",
+    image: "/docs/baked-crepe.",
+    productTypes: [
+      {
+        id: 0,
+        name: "Pack de 5",
+        tastes: [
+          {
+            id: 0,
+            name: "NATURE",
+            icon: "/docs/crepe.svg",
+            image: "/docs/baked-crepe.jpg"
+          },
+          {
+            id: 1,
+            name: "COCO",
+            icon: "/docs/coconut.svg",
+            image: "/docs/artisan.jpg"
+          },
+          {
+            id: 2,
+            name: "RHUM",
+            icon: "/docs/rhum.svg",
+            image: "/docs/crepe-orange.jpg"
+          },
+          {
+            id: 3,
+            name: "POMME",
+            icon: "/docs/apple.svg",
+            image: "/docs/crepe-stack.jpg"
+          }
+        ]
+      },
+      {
+        id: 1,
+        name: "A l'unité",
+        tastes: [
+          {
+            id: 0,
+            name: "NATURE",
+            icon: "/docs/product-crepe.svg",
+            image: "/docs/crepe-stack.jpg"
+          },
+          {
+            id: 1,
+            name: "CHOCOLAT",
+            icon: "/docs/coconut.svg",
+            image: "/docs/crepe-orange.jpg"
+          },
+          {
+            id: 2,
+            name: "CHOCOLAT COCO",
+            icon: "/docs/coconut.svg",
+            image: "/docs/artisan.jpg"
+          }
+        ]
+      }
+    ],
+    productReviews: [
+      {
+        shop: "Week end",
+        description: "“Produits Genial et livraivons rapides. Tres Appreciés.”"
+      },
+      {
+        shop: "Hyper U",
+        description: "“Produits Genial et livraivons rapides. Tres Appreciés.”"
+      }
+    ]
+  };
 
-  const productList = productTypes.map(product => {
+  const productList = product.productTypes.map(product => {
     return (
       <ProductType
         name={product.name}
@@ -99,7 +103,7 @@ export default function Product() {
     );
   });
 
-  const productTastes = productTypes.find(
+  const productTastes = product.productTypes.find(
     product => product.name === productType
   ).tastes;
 
@@ -182,7 +186,7 @@ export default function Product() {
           </div>
           <Link to="/">
             <button>
-              <img src={BackArrow} alt="Product Back Icon" />
+              <img src="/docs/product-back-arrow.svg" alt="Product Back Icon" />
               <p>Retour</p>
             </button>
           </Link>
