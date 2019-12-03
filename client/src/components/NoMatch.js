@@ -39,7 +39,38 @@ export default function NoMatch() {
           </button>
         </section>
       </header>
-      <section className="no-match-page-content"></section>
+      <section className="no-match-page-content">
+        <div className="no-match-content-left">
+          <img
+            className="no-match-background"
+            src="/docs/tahiti.png"
+            alt="Tahiti Icon"
+          />
+          <img
+            className="no-match-illustration"
+            src="/docs/no-match-illustration.png"
+            alt="404 Lost Icon"
+          />
+        </div>
+        <div className="no-match-content-right">
+          <h1 className="right-content-number">
+            <span className="number-first">4</span>
+            <span className="number-first">0</span>
+            <span className="number-third">4</span>
+          </h1>
+          <h3 className="right-content-title">Page Introuvable</h3>
+          <p>
+            On dirait que la page a laquelle vous essayez d’acceder n’existe
+            pas. Revisez l’URL pour verifiez que vous n’avez pas fait de fautes
+          </p>
+          <Link to="/">
+            <button>
+              <img src="" alt="No Match Back Icon" />
+              <p>Retour</p>
+            </button>
+          </Link>
+        </div>
+      </section>
     </section>
   );
 }

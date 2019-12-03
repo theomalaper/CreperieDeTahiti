@@ -2,8 +2,6 @@ import React, { useState, useEffect, Fragment } from "react";
 import "./Product.scss";
 import { Link, useParams } from "react-router-dom";
 import Carousel from "react-bootstrap/Carousel";
-import ProductType from "./ProductType";
-import ProductTaste from "./ProductTaste";
 import axios from "axios";
 import ProductTypeList from "./ProductTypeList";
 import ProductTasteList from "./ProductTasteList";
