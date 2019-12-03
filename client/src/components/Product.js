@@ -68,7 +68,9 @@ export default function Product({ state, dispatch, SET_PRODUCT_DATA }) {
           <header className="Product-nav-bar">
             <section className="Product-nav-bar-left">
               <Link className="Product-title-link" to="/">
-                <h3>Biscuiterie - Crêperie de Tahiti</h3>
+                <h3>
+                  Biscuiterie - Crêperie de Tahiti<span>®</span>
+                </h3>
               </Link>
             </section>
             <section className="Product-nav-bar-right">

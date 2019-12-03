@@ -11,6 +11,7 @@ import {
 import Homepage from "./Homepage";
 import Contact from "./Contact";
 import Product from "./Product";
+import NoMatch from "./NoMatch";
 import useApplicationData from "../hooks/useApplicationData";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -39,6 +40,9 @@ export default function App() {
             dispatch={dispatch}
             SET_PRODUCT_DATA={SET_PRODUCT_DATA}
           />
+        </Route>
+        <Route path="*">
+          <NoMatch />
         </Route>
       </Switch>
       <footer></footer>

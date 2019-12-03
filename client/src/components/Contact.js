@@ -19,7 +19,9 @@ export default function Contact() {
       <header className="Contact-nav-bar">
         <section className="Contact-nav-bar-left">
           <Link className="contact-title-link" to="/">
-            <h3>Biscuiterie - Crêperie de Tahiti</h3>
+            <h3>
+              Biscuiterie - Crêperie de Tahiti<span>®</span>
+            </h3>
           </Link>
         </section>
         <section className="Contact-nav-bar-right">

@@ -18,6 +18,7 @@ import Facebook from "../docs/facebook.svg";
 import Instagram from "../docs/instagram.svg";
 import Carousel from "react-bootstrap/Carousel";
 import { Link } from "react-router-dom";
+import Dropdown from "react-bootstrap/Dropdown";
 
 export default function Homepage() {
   // function setIndex(n, e) {
@@ -43,7 +44,9 @@ export default function Homepage() {
     <div className="homepage">
       <header className="Homepage-nav-bar">
         <section className="Homepage-nav-bar-left">
-          <h3>Biscuiterie - Crêperie de Tahiti</h3>
+          <h3>
+            Biscuiterie - Crêperie de Tahiti<span>®</span>
+          </h3>
         </section>
         <section className="Homepage-nav-bar-right">
           <a href="#presentation-page" className="Nav-bar-links react-links">
@@ -245,12 +248,18 @@ export default function Homepage() {
                   <p>Au froment (farine blanche)</p>
                 </header>
                 <div className="product-type-section">
-                  <Link to="/product/5ddb2c361c9d44000033598a/Pack-de-5">
+                  <Link
+                    to="/product/5ddb2c361c9d44000033598a/Pack-de-5"
+                    className="product-type-link"
+                  >
                     <button className="product-type-button">
                       <p>Pack de 5</p>
                     </button>
                   </Link>
-                  <Link to="/product/5ddb2c361c9d44000033598a/A-l'unité">
+                  <Link
+                    to="/product/5ddb2c361c9d44000033598a/A-l'unité"
+                    className="product-type-link"
+                  >
                     <button className="product-type-button">
                       <p>A l'unité</p>
                     </button>
@@ -279,7 +288,10 @@ export default function Homepage() {
                   <p>Sarrasin</p>
                 </header>
                 <div className="product-type-section">
-                  <Link to="/product/5ddb616e1c9d44000033598c/Pack-de-5">
+                  <Link
+                    to="/product/5ddb616e1c9d44000033598c/Pack-de-5"
+                    className="product-type-link"
+                  >
                     <button className="product-type-button">
                       <p>Pack de 5</p>
                     </button>
@@ -308,7 +320,7 @@ export default function Homepage() {
                   <p></p>
                 </header>
                 <div className="product-type-section">
-                  <button className="product-type-button">
+                  <button className="product-type-button-inactive">
                     <p>On y travaille</p>
                   </button>
                 </div>
@@ -400,12 +412,12 @@ export default function Homepage() {
             </div>
             <div className="footer-info-center-column">
               <h4>Liens</h4>
-              <a href="#">
+              <Link to="/product/5ddb2c361c9d44000033598a/Pack-de-5">
                 <p>Crepe</p>
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="/product/5ddb616e1c9d44000033598c/Pack-de-5">
                 <p>Galette</p>
-              </a>
+              </Link>
               <a href="#gamme">
                 <p>Gamme</p>
               </a>

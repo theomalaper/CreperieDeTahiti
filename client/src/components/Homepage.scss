@@ -25,6 +25,10 @@ body {
     h3 {
       font-size: 18px;
       font-weight: 600;
+      span {
+        font-size: 13px;
+        margin-left: 5px;
+      }
     }
   }
   .Homepage-nav-bar-right {
@@ -33,6 +37,21 @@ body {
     justify-content: space-around;
     align-items: center;
     font-family: "Nunito", sans-serif;
+    .dropdown-toggle {
+      background-color: transparent;
+      border: none;
+      margin: 0.5em;
+    }
+    .dropdown-toggle:focus {
+      background-color: #e48148;
+      border: none;
+      outline: none;
+    }
+    .dropdown-toggle:active {
+      background-color: transparent;
+      border: none;
+      outline: none;
+    }
     .Nav-bar-links {
       text-decoration: none;
       color: white;
@@ -444,30 +463,53 @@ body {
             align-items: center;
             margin: auto;
             margin-top: 0.5em;
-            .product-type-button {
-              background-color: #ebebeb;
+            .product-type-link {
               flex-grow: 1;
+              .product-type-button {
+                width: 90%;
+                background-color: #ebebeb;
+                margin: 0 0.5em;
+                border: none;
+                border-radius: 4px;
+                transition-duration: 0.2s;
+                outline: none;
+                cursor: pointer;
+                p {
+                  font-family: "Nunito", sans-serif;
+                  font-size: 13px;
+                  color: #757575;
+                  margin: 0.8em 0;
+                }
+              }
+              .product-type-button:hover {
+                background-color: rgb(203, 203, 203);
+                transition-duration: 0.2s;
+                p {
+                  color: rgb(77, 77, 77);
+                }
+              }
+              .product-type-button:active {
+                background-color: #ebebeb;
+                p {
+                  color: #757575;
+                }
+              }
+            }
+            .product-type-button-inactive {
+              width: 90%;
+              background-color: #ebebeb;
               margin: 0 0.5em;
               border: none;
               border-radius: 4px;
               transition-duration: 0.2s;
-              cursor: pointer;
+              outline: none;
+              cursor: default;
               p {
                 font-family: "Nunito", sans-serif;
                 font-size: 13px;
                 color: #757575;
                 margin: 0.8em 0;
               }
-            }
-            .product-type-button:hover {
-              background-color: rgb(203, 203, 203);
-              transition-duration: 0.2s;
-              p {
-                color: rgb(77, 77, 77);
-              }
-            }
-            .product-type-button:focus {
-              outline: none;
             }
           }
         }
@@ -502,6 +544,12 @@ body {
             height: 11px;
             width: 11px;
           }
+        }
+        .moreinfo-button:hover {
+          background-color: #f98543;
+        }
+        .moreinfo-button:active {
+          background-color: #e48148;
         }
       }
     }

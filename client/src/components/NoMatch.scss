@@ -1,0 +1,75 @@
+.NoMatch-nav-bar {
+  display: flex;
+  height: 9vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  .NoMatch-nav-bar-left {
+    color: rgb(255, 255, 255);
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+    font-family: "Raleway", sans-serif;
+    padding: 0 0 0 4em;
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      span {
+        font-size: 13px;
+        margin-left: 5px;
+      }
+    }
+    .contact-title-link {
+      text-decoration: none;
+      color: white;
+    }
+  }
+  .NoMatch-nav-bar-right {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: "Nunito", sans-serif;
+    .Nav-bar-links {
+      text-decoration: none;
+      color: rgb(0, 0, 0);
+      margin: 0 0.5em;
+      font-size: 13px;
+      font-weight: 600;
+      position: relative;
+    }
+    .Nav-bar-search-button {
+      background-color: transparent;
+      border: none;
+      img {
+        width: 1em;
+        height: 1em;
+      }
+    }
+    .Nav-bar-icon-separator {
+      background-color: rgb(0, 0, 0);
+      width: 2px;
+      height: 35%;
+    }
+    .Nav-bar-random-button {
+      background-color: transparent;
+      border: none;
+      padding: 0 1.7em 0 0;
+      img {
+        width: 1.2em;
+        height: 1.2em;
+      }
+    }
+    .Nav-bar-links:hover::after {
+      content: "";
+      position: absolute;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 39px;
+      min-width: 25px;
+      border-bottom: 6px solid rgb(0, 0, 0);
+    }
+  }
+}
