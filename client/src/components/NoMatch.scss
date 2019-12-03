@@ -78,7 +78,7 @@
   height: 100vh;
   width: 100vw;
   .no-match-page-content {
-    background-color: #e98c56;
+    background-color: #f58848;
     height: 90%;
     width: 100vw;
     border-radius: 0 0 0 420px;
@@ -107,9 +107,61 @@
       height: 45vh;
       margin: auto;
       .right-content-number {
+        display: flex;
+        h1 {
+          font-size: 100px;
+          color: white;
+          font-family: "Nunito", sans-serif;
+          font-weight: 200;
+        }
+        .number-first {
+          margin: 0.1em 0.1em 0 0;
+        }
+        .number-second {
+          margin: 0.2em 0 0 0;
+        }
+      }
+      .right-content-title {
+        margin: 0 0 1.5em 0;
+        font-family: "Raleway", sans-serif;
         color: white;
+      }
+      .right-content-title:after {
+        content: "";
+        display: block;
+        border-bottom: 2px solid black;
+        width: 120px;
+        margin: 0.7em 0;
+      }
+      .right-content-desc {
+        width: 55%;
         font-family: "Nunito", sans-serif;
-        font-size: 100px;
+        font-size: 14px;
+        color: white;
+      }
+      .right-content-home-button {
+        width: 150px;
+        height: 48px;
+        background-color: #141414;
+        border-radius: 25px;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2.5em 0;
+        opacity: 1;
+        p {
+          color: white;
+          margin: 0 1em;
+          font-family: "Nunito", sans-serif;
+        }
+        img {
+          height: 10px;
+          width: 10px;
+        }
+      }
+      .right-content-home-button:hover p {
+        color: #f58848;
       }
     }
   }

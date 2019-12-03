@@ -53,19 +53,19 @@ export default function NoMatch() {
           />
         </div>
         <div className="no-match-content-right">
-          <h1 className="right-content-number">
-            <span className="number-first">4</span>
-            <span className="number-first">0</span>
-            <span className="number-third">4</span>
-          </h1>
+          <div className="right-content-number">
+            <h1 className="number-first">4</h1>
+            <h1 className="number-second">0</h1>
+            <h1 className="number-third">4</h1>
+          </div>
           <h3 className="right-content-title">Page Introuvable</h3>
-          <p>
+          <p className="right-content-desc">
             On dirait que la page a laquelle vous essayez d’acceder n’existe
             pas. Revisez l’URL pour verifiez que vous n’avez pas fait de fautes
           </p>
           <Link to="/">
-            <button>
-              <img src="" alt="No Match Back Icon" />
+            <button className="right-content-home-button">
+              <img src="/docs/left-arrow.svg" alt="No Match Back Icon" />
               <p>Retour</p>
             </button>
           </Link>
