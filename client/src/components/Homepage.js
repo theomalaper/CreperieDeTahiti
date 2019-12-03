@@ -245,12 +245,16 @@ export default function Homepage() {
                   <p>Au froment (farine blanche)</p>
                 </header>
                 <div className="product-type-section">
-                  <button className="product-type-button">
-                    <p>Pack de 5</p>
-                  </button>
-                  <button className="product-type-button">
-                    <p>A l'unité</p>
-                  </button>
+                  <Link to="/product/5ddb2c361c9d44000033598a/Pack-de-5">
+                    <button className="product-type-button">
+                      <p>Pack de 5</p>
+                    </button>
+                  </Link>
+                  <Link to="/product/5ddb2c361c9d44000033598a/A-l'unité">
+                    <button className="product-type-button">
+                      <p>A l'unité</p>
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -259,7 +263,7 @@ export default function Homepage() {
                 <img src={Bookmark} alt="More Info Icon" />
                 <p>Plus d'information</p>
               </div>
-              <Link to="/product/5ddb2c361c9d44000033598a">
+              <Link to="/product/5ddb2c361c9d44000033598a/Pack-de-5">
                 <button className="moreinfo-button">
                   <img src={ProductArrow} alt="More Info Button Icon" />
                 </button>
@@ -275,9 +279,11 @@ export default function Homepage() {
                   <p>Sarrasin</p>
                 </header>
                 <div className="product-type-section">
-                  <button className="product-type-button">
-                    <p>Pack de 5</p>
-                  </button>
+                  <Link to="/product/5ddb616e1c9d44000033598c/Pack-de-5">
+                    <button className="product-type-button">
+                      <p>Pack de 5</p>
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -286,7 +292,7 @@ export default function Homepage() {
                 <img src={Bookmark} alt="More Info Icon" />
                 <p>Plus d'information</p>
               </div>
-              <Link to="/product/5ddb616e1c9d44000033598c">
+              <Link to="/product/5ddb616e1c9d44000033598c/Pack-de-5">
                 <button className="moreinfo-button">
                   <img src={ProductArrow} alt="More Info Button Icon" />
                 </button>

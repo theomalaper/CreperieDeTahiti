@@ -33,7 +33,7 @@ export default function App() {
         <Route exact path="/contact">
           <Contact state={state} dispatch={dispatch} />
         </Route>
-        <Route path="/product/:productId">
+        <Route path="/product/:productId/:productType">
           <Product
             state={state}
             dispatch={dispatch}
