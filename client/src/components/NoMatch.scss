@@ -1,20 +1,21 @@
 .NoMatch-nav-bar {
   display: flex;
-  height: 9vh;
+  height: 10vh;
   width: 100vw;
   position: absolute;
   top: 0;
-  z-index: 1000;
+  z-index: 9999;
   .NoMatch-nav-bar-left {
     color: rgb(255, 255, 255);
     flex-grow: 2;
     display: flex;
     align-items: center;
-    font-family: "Raleway", sans-serif;
-    padding: 0 0 0 4em;
+    font-family: "Poppins", sans-serif;
+    padding: 0 0 0 10em;
     h3 {
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 500;
+      margin: 0;
       span {
         font-size: 13px;
         margin-left: 5px;
@@ -30,46 +31,94 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-family: "Nunito", sans-serif;
+    font-family: "Poppins", sans-serif;
+    padding: 0 8em 0 0;
     .Nav-bar-links {
       text-decoration: none;
       color: rgb(255, 255, 255);
       margin: 0 0.5em;
-      font-size: 13px;
-      font-weight: 600;
+      font-size: 12px;
+      font-weight: 400;
       position: relative;
+      position: relative;
+      letter-spacing: 0.08em;
+    }
+    .gamme-drop-down-container {
+      position: relative;
+      height: 4.5vh;
+      margin-top: 0.6em;
+      img {
+        height: 10px;
+        width: 10px;
+        margin-left: 0.5em;
+        transition: 0.2s ease-in-out;
+      }
+      .gamme-drop-down {
+        position: absolute;
+        list-style-type: none;
+        padding: 0;
+        top: 35px;
+        width: 13vw;
+        background-color: rgb(255, 255, 255);
+        border-radius: 3px;
+        overflow: hidden;
+        display: none;
+        -webkit-box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.21);
+        -moz-box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.21);
+        box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.21);
+        li {
+          color: rgb(28, 28, 28);
+          font-family: "Poppins";
+          font-size: 13px;
+          padding: 1em 2em;
+        }
+        li:hover {
+          transition: 0.1s ease-in-out;
+          background-color: rgb(160, 160, 160);
+          color: white;
+        }
+        .gamme-link {
+          text-decoration: none;
+          color: rgb(255, 255, 255);
+        }
+      }
+    }
+    .gamme-drop-down-container:hover {
+      img {
+        transition: 0.3s ease-in-out;
+        transform: rotate(-180deg);
+      }
+      .gamme-drop-down {
+        transition: 0.1s ease-in-out;
+        display: block;
+      }
     }
     .Nav-bar-search-button {
       background-color: transparent;
+      border-radius: 75px;
+      height: 30px;
+      width: 30px;
       border: none;
+      transition: 0.1s ease-in-out;
       img {
-        width: 1em;
-        height: 1em;
+        width: 0.9em;
+        height: 0.9em;
       }
     }
-    .Nav-bar-icon-separator {
-      background-color: rgb(255, 255, 255);
-      width: 2px;
-      height: 35%;
-    }
-    .Nav-bar-random-button {
-      background-color: transparent;
-      border: none;
-      padding: 0 1.7em 0 0;
-      img {
-        width: 1.2em;
-        height: 1.2em;
-      }
+    .Nav-bar-search-button:hover {
+      transition: 0.2s ease-in-out;
+      border: 1px solid rgb(255, 255, 255);
     }
     .Nav-bar-links:hover::after {
       content: "";
       position: absolute;
-      position: absolute;
       left: 0;
       right: 0;
-      top: 39px;
+      top: 30px;
       min-width: 25px;
-      border-bottom: 6px solid rgb(255, 255, 255);
+      margin: auto;
+      border-bottom: 2px solid #ffffff;
+      animation: slide 0.15s;
     }
   }
 }
@@ -111,7 +160,7 @@
         h1 {
           font-size: 100px;
           color: white;
-          font-family: "Nunito", sans-serif;
+          font-family: "Poppins", sans-serif;
           font-weight: 200;
         }
         .number-first {
@@ -123,8 +172,9 @@
       }
       .right-content-title {
         margin: 0 0 1.5em 0;
-        font-family: "Raleway", sans-serif;
+        font-family: "Poppins", sans-serif;
         color: white;
+        font-weight: 400;
       }
       .right-content-title:after {
         content: "";
@@ -135,8 +185,8 @@
       }
       .right-content-desc {
         width: 55%;
-        font-family: "Nunito", sans-serif;
-        font-size: 14px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 13px;
         color: white;
       }
       .right-content-home-button {
@@ -153,7 +203,8 @@
         p {
           color: white;
           margin: 0 1em;
-          font-family: "Nunito", sans-serif;
+          font-family: "Poppins", sans-serif;
+          font-size: 14px;
         }
         img {
           height: 10px;
