@@ -152,14 +152,14 @@ body {
   height: 100vh;
   position: relative;
   .landing-page--background {
-    background-image: url("/docs/baked-crepe.jpg");
     position: relative;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     width: 100vw;
     height: 100vh;
+  }
+  .landing-background-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
   .landing-overlay {
     background-color: black;

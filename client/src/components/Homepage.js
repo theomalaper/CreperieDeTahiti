@@ -32,11 +32,17 @@ export default function Homepage() {
   //   }
   // }
 
+  const [indexLanding, setIndexLanding] = useState(0);
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(null);
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
+    setDirection(e.direction);
+  };
+
+  const handleSelectLanding = (selectedIndex, e) => {
+    setIndexLanding(selectedIndex);
     setDirection(e.direction);
   };
 
@@ -93,20 +99,78 @@ export default function Homepage() {
         </section>
       </header>
       <section className="landing-page" id="landing-page">
-        <div className="landing-page--background">
-          <div className="landing-overlay"></div>
-        </div>
-        <div className="landing-page--presentation">
-          <h1 className="landing-title">La Creperie du Fenua</h1>
-          <p className="landing-paragraph">
-            Notre gamme de produits de qualité, frais, produits au fenua et
-            completement naturel contactze nous des maintenant pour voir ce que
-            l’on peut faire pour vous
-          </p>
-          <Link className="landing-contact-button" to="/contact">
-            <p>CONTACTEZ NOUS</p>
-          </Link>
-        </div>
+        <Carousel
+          width={500}
+          height={600}
+          direction={direction}
+          onSelect={handleSelectLanding}
+          interval={null}
+          activeIndex={indexLanding}
+        >
+          <Carousel.Item>
+            <div className="landing-page--background">
+              <div className="landing-overlay"></div>
+              <img
+                className="landing-background-image"
+                src="/docs/baked-crepe.jpg"
+                alt="Background Image"
+              />
+            </div>
+            <div className="landing-page--presentation">
+              <h1 className="landing-title">La Creperie du Fenua</h1>
+              <p className="landing-paragraph">
+                Notre gamme de produits de qualité, frais, produits au fenua et
+                completement naturel contactze nous des maintenant pour voir ce
+                que l’on peut faire pour vous
+              </p>
+              <Link className="landing-contact-button" to="/contact">
+                <p>CONTACTEZ NOUS</p>
+              </Link>
+            </div>
+          </Carousel.Item>
+          <Carousel.Item>
+            <div className="landing-page--background">
+              <div className="landing-overlay"></div>
+              <img
+                className="landing-background-image"
+                src="/docs/crepe-orange.jpg"
+                alt="Background Image"
+              />
+            </div>
+            <div className="landing-page--presentation">
+              <h1 className="landing-title">La Recette de la Semaine</h1>
+              <p className="landing-paragraph">
+                Notre gamme de produits de qualité, frais, produits au fenua et
+                completement naturel contactze nous des maintenant pour voir ce
+                que l’on peut faire pour vous
+              </p>
+              <Link className="landing-contact-button" to="/contact">
+                <p>RECETTE</p>
+              </Link>
+            </div>
+          </Carousel.Item>
+          <Carousel.Item>
+            <div className="landing-page--background">
+              <div className="landing-overlay"></div>
+              <img
+                className="landing-background-image"
+                src="/docs/crepe-orange.jpg"
+                alt="Background Image"
+              />
+            </div>
+            <div className="landing-page--presentation">
+              <h1 className="landing-title">Notre Promo de la Semaine</h1>
+              <p className="landing-paragraph">
+                Notre gamme de produits de qualité, frais, produits au fenua et
+                completement naturel contactze nous des maintenant pour voir ce
+                que l’on peut faire pour vous
+              </p>
+              <Link className="landing-contact-button" to="/contact">
+                <p>RECETTE</p>
+              </Link>
+            </div>
+          </Carousel.Item>
+        </Carousel>
       </section>
       <section id="presentation-page" className="presentation-page">
         <div className="presentation-page--details">
