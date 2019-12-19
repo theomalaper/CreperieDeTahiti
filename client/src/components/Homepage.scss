@@ -26,6 +26,7 @@ body {
       font-size: 18px;
       font-weight: 500;
       margin: 0;
+      min-width: 100%;
       span {
         font-size: 13px;
         margin-left: 5px;
@@ -38,7 +39,7 @@ body {
     justify-content: space-around;
     align-items: center;
     font-family: "Poppins", sans-serif;
-    padding: 0 8em 0 0;
+    padding: 0 8rem 0 0;
     .Nav-bar-links {
       text-decoration: none;
       color: rgb(255, 255, 255);
@@ -48,11 +49,13 @@ body {
       position: relative;
       position: relative;
       letter-spacing: 0.08em;
+      min-width: 70px;
     }
     .gamme-drop-down-container {
       position: relative;
       height: 4.5vh;
       margin-top: 0.6em;
+      min-width: 90px;
       img {
         height: 10px;
         width: 10px;
