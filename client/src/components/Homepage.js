@@ -100,11 +100,9 @@ export default function Homepage() {
       </header>
       <section className="landing-page" id="landing-page">
         <Carousel
-          width={500}
-          height={600}
           direction={direction}
           onSelect={handleSelectLanding}
-          interval={null}
+          interval={4000}
           activeIndex={indexLanding}
         >
           <Carousel.Item>
@@ -207,58 +205,12 @@ export default function Homepage() {
         </div>
         <div className="presentation-page--gallery">
           <div className="slider-gallery">
-            <Carousel
-              width={500}
-              height={600}
-              direction={direction}
-              onSelect={handleSelect}
-              interval={null}
-              activeIndex={index}
-            >
-              <Carousel.Item>
-                <img
-                  className="d-block"
-                  src={Image1}
-                  alt="First slide"
-                  width={500}
-                  height={500}
-                />
-                {/* <Carousel.Caption>
-                  <h3>First slide label</h3>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption> */}
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="d-block"
-                  src={Image2}
-                  alt="Second slide"
-                  width={800}
-                  height={500}
-                />
-                {/* <Carousel.Caption>
-                  <h3>Second slide label</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </Carousel.Caption> */}
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="d-block"
-                  src={Image3}
-                  alt="Third slide"
-                  width={500}
-                  height={500}
-                />
-                {/* <Carousel.Caption>
-                  <h3>Third slide label</h3>
-                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </Carousel.Caption> */}
-              </Carousel.Item>
-            </Carousel>
+            <img
+              className="slider-image"
+              src="/docs/artisan.png"
+              alt="Information Page Photo"
+            />
           </div>
-          {/* <div className="button-section">
-            <SelectionDotList slideIndex={slideIndex}/>
-          </div> */}
         </div>
       </section>
       <section className="process-presentation-stripe">
